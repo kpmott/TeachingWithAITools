@@ -1,0 +1,218 @@
+%-------------------------------------------------------------------------------------------------------
+% Handout/Notes Style File
+% Author: Kevin Mott (kevinpmott.com)
+% Rotman School of Management, University of Toronto
+% License: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
+%
+% Style for course notes and handouts with solution toggle functionality.
+% Customize course information in the variables below.
+%-------------------------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------------------------------
+% PACKAGES
+% Essential packages for document layout, math, graphics, and formatting.
+% You likely won't need to change these unless adding specialized functionality.
+%-------------------------------------------------------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ graphicx }
+\usepackage{bbm}
+
+\usepackage[colorlinks = true,
+            linkcolor = rotman,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\newenvironment{packed_item}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+\usepackage[utf8]{inputenc}
+\usepackage{pbox}
+\usepackage{lastpage}
+\usepackage[most]{tcolorbox}
+
+%-------------------------------------------------------------------------------------------------------
+% HEADERS AND FOOTERS
+% This section creates professional headers/footers with your course info and logo.
+% Headers show course number (left) and logo (right).
+% Footers show version date (left), page number (center), and copyright (right).
+%-------------------------------------------------------------------------------------------------------
+\usepackage{datetime}
+\newcommand{\NoteDate}{\monthname[\the\month] \the\day, \the\year}
+
+% CUSTOMIZE THESE FOR YOUR COURSE:
+\newcommand{\CourseNumber}{COURSE 101}  % e.g., "ECON 101", "MATH 200"
+\newcommand{\CourseName}{Course Name}   % e.g., "Introduction to Economics"
+\newcommand{\CourseDate}{Term Year}     % e.g., "Fall 2025"
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all headers and footers
+\setlength{\headheight}{41pt}
+\setlength{\headsep}{0.5cm}
+\lhead{{\sc{\CourseNumber,   \CourseDate}}}
+\rhead{\includegraphics[scale=0.15]{rotman}}  % CUSTOMIZE: Replace with your logo or remove
+\lfoot{\sc{\scriptsize{This version: \NoteDate}}}
+\cfoot{\thepage}
+\rfoot{\sc{\scriptsize{\textcopyright \ Your Name}}}  % CUSTOMIZE: Replace with your name
+\renewcommand{\headrulewidth}{.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%-------------------------------------------------------------------------------------------------------
+% ADDITIONAL PACKAGES
+% More packages for tables, graphics, TikZ diagrams, and special formatting.
+%-------------------------------------------------------------------------------------------------------
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{tikz,pgfplots}
+\usepackage{subcaption}
+\usepackage{multirow,array}
+\usetikzlibrary{positioning,shapes,calc,intersections}
+\usepackage{csquotes}
+\usepackage{imakeidx}
+\usepackage[T1]{fontenc}
+\usepackage{xspace}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{colortbl}
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage{eurosym}
+
+%-------------------------------------------------------------------------------------------------------
+% COLORS
+% Define your institution's brand colors here.
+% CUSTOMIZE: Replace these hex/RGB values with your school's colors.
+%-------------------------------------------------------------------------------------------------------
+\definecolor{rotman}{HTML}{E20778}
+\definecolor{darkgreen}{RGB}{30,175,88}
+\definecolor{darkblue}{RGB}{30,118,175}
+\definecolor{shadecolor}{RGB}{120,120,120}
+\definecolor{uoftblue}{RGB}{0,42,92}      % UofT primary blue - used for headers
+\definecolor{uoftteal}{RGB}{0,127,163}    % UofT accent teal - used for blocks
+
+%-------------------------------------------------------------------------------------------------------
+% CONVENIENCE COMMANDS
+% Shortcuts for common formatting and math notation.
+% - Ordinal suffixes: use \1st, \2nd, \3rd, \4th for "1st", "2nd", etc.
+% - \grading{points}{description}: formatted grading rubric line
+% - \Var, \Cov: properly formatted math operators for variance and covariance
+%-------------------------------------------------------------------------------------------------------
+\newcommand\st{\textsuperscript{st}\xspace}
+\newcommand\nd{\textsuperscript{nd}\xspace}
+\newcommand\rd{\textsuperscript{rd}\xspace}
+\newcommand\nth{\textsuperscript{th}\xspace} %\th is taken already
+
+\newcommand{\grading}[2]{{\color{rotman}\textbf{Grading (#1 Points):} #2}}
+
+\newcommand*{\namesigdate}[2]{%
+    \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[2.5in]{\hrulefill}%
+    \par\noindent\makebox[2.5in][l]{#1}      \hfill\makebox[2.5in][l]{#2}%
+}
+
+\renewcommand\labelitemi{{\boldmath$\cdot$}}
+\renewcommand\labelitemii{-}
+
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Cov}{\text{Cov}}
+
+\usepackage{setspace}
+% \doublespacing
+
+%-------------------------------------------------------------------------------------------------------
+% SECTION AND TABLE OF CONTENTS FORMATTING
+% Styles section headings and table of contents entries with your brand color.
+% Uses a clean, non-bold style that works well for academic documents.
+% CUSTOMIZE: Change "rotman" to your institution's color defined above.
+%-------------------------------------------------------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{rotman}\Large\normalfont}
+  {\thesection}
+  {1em}
+  {}
+\titleformat{\subsection}
+  {\color{rotman}\large\normalfont}
+  {\thesubsection}
+  {1em}
+  {}
+
+% Table of contents formatting: uses same brand color as headings
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\normalfont\color{rotman}}
+\renewcommand{\cftsecpagefont}{\normalfont\color{rotman}}
+\renewcommand{\cftsubsecfont}{\normalfont\color{rotman}}
+\renewcommand{\cftsubsecpagefont}{\normalfont\color{rotman}}
+\renewcommand{\cftsecleader}{\color{rotman}\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\color{rotman}\cftdotfill{\cftdotsep}}
+
+%-------------------------------------------------------------------------------------------------------
+% PAGE STYLE FOR ALL PAGES
+% Ensures consistent headers/footers on every page, including first page and TOC.
+%-------------------------------------------------------------------------------------------------------
+\AtBeginDocument{\thispagestyle{fancy}}
+
+% Force fancy page style for plain pages (like first page, TOC, etc.)
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear all headers and footers
+  \lhead{{\sc{\CourseNumber,   \CourseDate}}}
+  \rhead{\includegraphics[scale=0.15]{rotman}}  % CUSTOMIZE: Replace with your logo
+  \lfoot{\sc{\scriptsize{This version: \NoteDate}}}
+  \cfoot{\thepage}
+  \rfoot{\sc{\scriptsize{\textcopyright \ Your Name}}}  % CUSTOMIZE: Replace with your name
+  \renewcommand{\headrulewidth}{.5pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+%-------------------------------------------------------------------------------------------------------
+% SOLUTION TOGGLE SYSTEM
+% This is the magic for exams and practice problems. Compile with or without solutions!
+%
+% HOW IT WORKS:
+% - By default, solutions are HIDDEN (for student handouts)
+% - To show solutions, add \printsoltrue before \begin{document} in your .tex file
+% - Or compile with: pdflatex "\def\printsol{}\input{yourfile.tex}"
+%
+% USAGE IN YOUR DOCUMENT:
+% - \sol{Your solution text here} - only appears when solutions are enabled
+% - \qskip - adds vertical space (for student answers) when solutions hidden
+% - \pageskip - adds page break when solutions hidden
+%
+% EXAMPLE:
+%   \begin{enumerate}
+%     \item Calculate the present value of \$100 received in 2 years at 5\% interest.
+%     \sol{PV = \$100 / (1.05)^2 = \$90.70}
+%   \end{enumerate}
+%-------------------------------------------------------------------------------------------------------
+\newif\ifprintsol
+\printsolfalse
+\ifdefined\printsol
+  \printsoltrue
+\fi
+
+\ifprintsol
+    \newcommand{\qskip}{}
+    \newcommand{\pageskip}{}
+\else
+    \newcommand{\qskip}{\vfill}
+    \newcommand{\pageskip}{\newpage}
+\fi
+\newcommand{\sol}[1]{\ifprintsol \par\smallskip\noindent\textbf{Solution:\\} #1\smallskip\par\fi \qskip}
+
+%-------------------------------------------------------------------------------------------------------
+% QUESTION BANK PATH
+% Sets the default path to your question bank directory.
+% Use \input{\qbank/TopicName/question1} to pull in questions.
+% CUSTOMIZE: Adjust path if your directory structure differs.
+%-------------------------------------------------------------------------------------------------------
+\newcommand{\qbank}{../../question_bank}

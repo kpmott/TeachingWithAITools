@@ -1,0 +1,44 @@
+\item \textbf{\color{rotman} Project Financing and NPV} \\ 
+A company is evaluating the construction of a new battery plant. The project requires an upfront investment of \$300 million and will produce perpetual annual EBIT of \$40 million. The corporate tax rate is 30\% and the unlevered cost of capital is 10\%. 
+
+\begin{enumerate}
+
+\item Calculate the NPV of the project under an all-equity financed structure. 
+
+\end{enumerate}
+
+The company instead considers financing the project through a capital structure that is equal parts debt and equity. The interest rate on the debt is 5\% and the total debt outstanding would be \$150 million. 
+
+\begin{enumerate}[resume]
+
+\item Calculate the new cost of equity under this capital structure. 
+
+\item Compute the WACC under the new capital structure. 
+
+\item Recalculate the NPV of the project under this financing plan using the WACC you calculated in part (c). 
+
+\item Is there a real effect of choosing different financing streams? In finance, we use the term \emph{real} to mean production-based outcomes. Hint: compare your answers to (a) and (d) and the implications for if the battery plant should be built. 
+
+\end{enumerate}
+
+\sol{
+
+\begin{enumerate}
+
+\item The unlevered cost of capital is 10\%, so using the perpetuity formula the NPV in millions is:
+\[\text{NPV} = -300 + \frac{40\times(1-0.30)}{0.10} = -20\]
+
+\item Under the new capital structure:
+\[r_E = r_0 + \frac{D}{E} \times (1-\tau_c) \times (r_0 - r_D) = 0.10 + \frac{1}{1} \times (1-0.30)\times(0.10 - 0.05) = 13.5\%\]
+
+\item The new WACC is 
+\[\text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D (1-\tau_c) = \frac{1}{2} \times 0.135 + \frac{1}{2} \times 0.05 \times (1-0.3) = 8.5\%\]
+
+\item Using the WACC from part (c), the NPV in millions is:
+\[\text{NPV} = -300 + \frac{40\times(1-0.30)}{0.085} = -300 + \frac{28}{0.085} = 29.41\]
+
+\item Yes, there is a real effect of financing. Under all equity, the project has a negative NPV. But the tax shield of debt creates enough value to make the project overall positive NPV when financed with a capital structure of equal parts debt and equity. The availability of debt financing allows the company to create value, producing batteries after the plant is built. 
+
+\end{enumerate}
+
+}

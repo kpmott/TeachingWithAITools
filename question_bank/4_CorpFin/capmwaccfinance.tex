@@ -1,0 +1,65 @@
+\item \textbf{\color{rotman} Capital Budgeting and CAPM}
+
+Recall the Capital Asset Pricing Model (CAPM):
+\[\mathbb E[r_i] = r_f + \beta_i \mathbb E[r_m-r_f]\]
+A company that is 75\% equity financed and 25\% debt financed. The corporate tax rate is 37.5\%.
+The company's stocks have a $\beta$ of 1.5, the risk-free rate is 4\%, and the expected market risk premium is 6\%. The yield on the company's corporate debt is 8\%.
+
+Recall that
+\[\text{WACC} = \text{\% equity}\times\text{cost of equity} + \text{\% debt}\times\text{after-tax cost of debt}\]
+
+\begin{enumerate}
+\item Calculate the company's cost of equity.
+
+\item Calculate the company's (after-tax) cost of debt.
+
+\item Calculate the company's weighted-average cost of capital (WACC).
+
+\end{enumerate}
+
+The managers of the company are considering investing in a project that would cost \$5.25 million dollars up front, and then would pay back the following cash flows in the following years:
+\begin{center}
+\begin{tabular}{cc}
+Year & Cash Flow \\\hline\hline
+1 & \$1,250,000 \\
+2 & \$2,500,000 \\
+3 & \$2,750,000
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[resume]
+\item If the project will be equity-financed, should the managers do the project?
+
+\item If the project will be debt-financed, should the managers do the project?
+
+\item If the project will be financed with the same debt-equity ratio as the firm, should the managers do the project?
+
+\item Explain why the results of how the project should be financed make sense, noting that the IRR of the project is 10.18\%. Mention the terms \emph{opportunity cost}, \emph{equity-holders}, and \emph{debt-holders}.
+
+\end{enumerate}
+
+\sol{
+\begin{enumerate}
+\item From the CAPM:
+    \[r_E = r_f + \beta\mathbb E[r_m-r_f] = 4\% + 1.5\times6\% = 13\%\]
+
+\item \[\text{After-tax cost of debt} = r_D\times(1-\tau_c) = 8\%\times(1-37.5\%) = 5\%\]
+
+\item \[\text{WACC} = \frac{E}{E+D}\times r_E + \frac{D}{E+D}\times r_D(1-\tau_c) = 75\% \times 13\% + 25\% \times 5\% = 11\%\]
+
+\item \newcommand{\cost}{0.13}
+    \[\text{NPV} = 1{,}000{,}000\times\left(-5.25 + \frac{1.25}{1+\cost} + \frac{2.5}{(1+\cost)^2} + \frac{2.75}{(1+\cost)^3}\right) = -\$247{,}832.44 < 0\]
+    Do not do the project.
+
+\item \renewcommand{\cost}{0.05}
+    \[\text{NPV} = 1{,}000{,}000\times\left(-5.25 + \frac{1.25}{1+\cost} + \frac{2.5}{(1+\cost)^2} + \frac{2.75}{(1+\cost)^3}\right) = \$216{,}475.11 > 0\]
+    Do the project.
+
+\item \renewcommand{\cost}{0.11}
+    \[\text{NPV} = 1{,}000{,}000\times\left(-5.25 + \frac{1.25}{1+\cost} + \frac{2.5}{(1+\cost)^2} + \frac{2.75}{(1+\cost)^3}\right) = -\$75{,}713.06 < 0\]
+    Do not do the project.
+
+\item Only the after-tax cost of debt is below the IRR, which means that debt is the only financing method that compensates the debtholders for their opportunity cost. The cost of equity is high (from the high $\beta$), so the high cost of equity means unleveraged or leveraged equity financing will not appropriately compensate equityholders for their opportunity cost.
+
+\end{enumerate}
+}

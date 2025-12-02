@@ -1,0 +1,65 @@
+\item \textbf{\color{rotman} Business Cycles, Systematic Risk, and Cost of Equity} %\hfill \emph{14 marks}
+
+Your firm operates in a procyclical industry — when the economy booms, your sales and earnings rise sharply, but in recessions they fall. The market returns 8\% and the risk-free rate is 2\%.
+
+You are comparing two capital structures:
+\begin{itemize}
+	\item Capital Structure A is 100\% equity-financed. Its beta is 1.5.
+	\item Capital Structure B has 50\% debt and 50\% equity, with interest payments fixed at \$20 million per year (corresponding cost of debt is 3\%).
+\end{itemize}
+Suppose a recession starts, and EBIT falls from \$60 million to \$30 million.
+
+\begin{enumerate}
+    \item Under which capital structure does the firm see a larger percentage drop in dividends? Calculate the percent drop in dividends as the economy enters a recession for each capital structure. Explain why this happens.
+
+    \item Explain how this relates to equity beta. Why does adding debt increase the risk of equity?
+
+    \item Use the Miller-Modigliani result to calculate the cost of equity for the firm under Capital Structure B.\\
+    \emph{\small Hint: what was the original cost of equity under Capital Structure A?}
+    % \[r_s = r_0 + \frac{B}{S}(r_0-r_b)\]
+
+    \item What is the beta of the equity of the firm under Capital Structure B? Is this in line with your answer to part (b)?
+    % \[r_s = r_f + \beta_\text{equity} (r_m - r_f)\]
+
+    \item How would the firm's ability to finance future investments using retained earnings differ between Capital Structure A and Capital Structure B across the business cycle (meaning as the economy fluctuates between good times and recessions)?
+
+\end{enumerate}
+
+\sol{
+\begin{enumerate}
+    \item Let's start when there is no recession. And note there are no taxes in this question.
+        \begin{itemize}
+            \item  A: All of EBIT can go to dividends: \$60 million.
+            \item  B: \$40 million remains after interest payments.
+        \end{itemize}
+
+        When there is a recession:
+        \begin{itemize}
+            \item  A: Now EBIT is only \$30 million.
+            \item  B: Only \$10 million is remaining after interest payments.
+        \end{itemize}
+
+        So under Capital Structure A the firm has a drop of $\frac{60-30}{60} = 50\%$, while under Capital Structure B the firm has a drop of $\frac{40-10}{40} = 75\%$. This is because when EBIT falls but the firm has debt, the debt must be paid back before shareholders can receive dividends.
+
+    \item Equityholders are more exposed to the risk of a recession when the firm issues debt, as illustrated in the numerical example above in (a).
+
+    \item The cost of equity of firm $A$ can be calculated from the CAPM:
+        \[r_0 = r_f + \beta (r_m - r_f) = 2\% + 1.5 \times (8\% - 2\%) = 11\% \]
+        Then we can use the Modigliani-Miller equation:
+        \[r_E = r_0 + \frac{D}{E}(r_0-r_D) = 11\% + \frac{1}{1}(11\% - 3\%) = 19\%\]
+
+    \item Solving directly:
+        \begin{align*}
+            19\% &= 2\% + \beta_\text{equity} (8\% - 2\%) \\
+            \beta_\text{equity} &= 2.83
+        \end{align*}
+        This is in line with my answers to part (b): the equity beta is higher when the firm has leverage. As expected, the increased exposure to recession risk increases equity beta.
+
+    \item Capital Structure A retains more earnings in good times and suffers smaller drops in retained earnings in bad times.
+
+    This shows that debt financing reduces the firm's ability to retain earnings across the cycle. Since retained earnings are an important source of internal financing (especially when external financing is costly or constrained), this puts Capital Structure B at a disadvantage when it comes to funding new projects, particularly during or after a downturn.
+
+    In short: higher leverage amplifies the cyclicality of available internal funds, which can limit flexibility for future investment.
+
+\end{enumerate}
+}

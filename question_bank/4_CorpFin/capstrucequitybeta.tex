@@ -1,0 +1,44 @@
+\item \textbf{\color{rotman} Capital Structure and Equity Beta}
+
+An unlevered firm has a beta of 0.9. The expected return on the market is 10\% and the risk-free rate is 3\%. There are no corporate taxes. The firm is considering levering up to a capital structure of 65\% equity and 35\% debt. The interest expense on debt is 4\%.
+
+\begin{enumerate}
+
+\item Calculate the firm's cost of equity when it is unlevered.
+
+\item Calculate the firm's new cost of equity under the levered capital structure.
+
+\item Why has the cost of equity increased? Explain this in terms of accounting fundamentals: what does the debt obligation mean about the likelihood of cash flows to equity holders? Focus especially on \emph{economic downturns}.
+
+\item Based on your answer to (c), what do you expect to happen to the beta of the firm's equity after the firm levers up its capital structure? Explain in terms of \emph{systematic risk}.
+
+\item Use the CAPM to calculate the new beta of the firm's equity after it has levered up. Does this align with your expected answer from (d)?
+
+\item What does the equity beta from your answer in (e) imply about the beta of the firm's debt? Hint: remember that the beta of an overall firm doesn't change as financing changes. Does the firm's debt beta make sense? Explain in terms of \emph{systematic risk} and \emph{financial distress}.
+
+\end{enumerate}
+
+\sol{
+\begin{enumerate}
+\item Using the CAPM:
+\[r_0 = r_f + \beta (r_m - r_f) = 0.03 + 0.9 \times (0.10 - 0.03) = 9.3\%\]
+
+\item Using the Modigliani-Miller result:
+\[r_E = r_0 + \frac{D}{E}(r_0-r_D) = 0.093 + \frac{0.35}{0.65}\times(0.093 - 0.04) = 12.15\%\]
+
+\item The cost of equity increases because in an economic downturn, the firm is less likely to have earnings remaining after interest expense and taxes, meaning fewer dividends available to pay out to equity holders. The shareholders are therefore more exposed to systematic risk.
+
+\item Since the shareholders are more exposed to systematic risk, the beta of the stock should increase.
+
+\item From the CAPM with the new cost of equity, I confirm my answer from (d).
+\begin{align*}
+r_E &= r_f + \beta (r_m - r_f) \\
+0.1215 &= 0.03 + \beta (0.10 - 0.03) \\
+\beta &= 1.31
+\end{align*}
+
+\item The beta of the firm stays constant (at 0.9) as the equity beta increases to 1.31.
+\[\beta_{\text{Project}} = 0.65\times\beta_\text{equity} + 0.35\times\beta_\text{debt} \implies \beta_\text{debt} = 0.13\]
+This is in line with my expectations. Corporate debt is still sensitive to the business cycle, as an economic downturn could lead to financial distress (inability to pay back debts), though I would expect this to be at a lower level (smaller beta) compared to equity.
+\end{enumerate}
+}

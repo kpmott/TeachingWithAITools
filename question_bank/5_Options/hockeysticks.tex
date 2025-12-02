@@ -1,0 +1,114 @@
+\item \textbf{\color{rotman} Financial Engineering with Options: Speculating on Volatility}
+
+Consider a stock currently trading at $S_0 = \$50$. You believe the stock will experience significant price movement over the next 3 months, but you're unsure of the direction. You decide to implement a \textbf{long straddle} strategy using the following options, both expiring in 3 months ($T = 0.25$ years):
+\begin{itemize}
+\item Call option with strike $K = \$50$ (buy)
+\item Put option with strike $K = \$50$ (buy)
+\end{itemize}
+
+Additional market data: risk-free rate $r = 5\%$, volatility $\sigma = 30\%$.
+
+\begin{enumerate}
+\item[(a)] Draw a hockey-stick diagram showing the payoff at expiration for this long straddle strategy. 
+
+\item[(b)] Use the Black-Scholes formula to calculate the price of the call option with strike $K = \$50$.
+
+\item[(c)] Use put-call parity to determine the price of the put option with the same strike and expiration.
+
+\item[(d)] Calculate the total premium paid for this straddle strategy. What does the stock price need to do for you to profit?
+
+\item[(e)] Explain why this strategy is a bet on \emph{volatility} rather than direction. Under what market conditions would you use a long straddle?
+
+\item[(f)] Consider the counterparty who sold you both options (the \textbf{short straddle} position). Under what circumstances would they profit?
+\end{enumerate}
+
+\sol{
+\begin{enumerate}
+\item[(a)] A long straddle involves buying both a call and a put at the same strike price.
+
+\textbf{Payoff at expiration:}
+\begin{itemize}
+    \item If $S_T < K$: Put pays $(K - S_T)$, call expires worthless. Payoff $= K - S_T$
+    \item If $S_T = K$: Both options expire at-the-money. Payoff $= 0$
+    \item If $S_T > K$: Call pays $(S_T - K)$, put expires worthless. Payoff $= S_T - K$
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+% Axes
+\draw[->] (0,0) -- (10,0) node[right] {$S_T$};
+\draw[->] (0,-0.5) -- (0,4) node[above] {Payoff};
+
+% Strike price
+\draw[dashed] (5,-0.5) -- (5,4);
+\node[below] at (5,0) {$K$};
+
+% Payoff line (V-shape)
+\draw[very thick, uoftteal] (1,2.8) -- (5,0) -- (9,2.8);
+
+% Labels
+\node[left] at (0,0) {0};
+\end{tikzpicture}
+\end{center}
+
+The payoff forms a V-shape with vertex at $K$. The straddle pays off when the stock moves away from the strike in either direction.
+
+\item[(b)] Given: $S_0 = 50$, $K = 50$, $T = 0.25$, $r = 0.05$, $\sigma = 0.30$
+
+Since the option is at-the-money ($S_0 = K$), we have $\ln(S_0/K) = 0$.
+
+\begin{align*}
+d_1 &= \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}} = 0.3167 \\[0.5em]
+d_2 &= d_1 - \sigma\sqrt{T} = 0.1667
+\end{align*}
+
+From the standard normal table: $N(d_1) = 0.6243$, $N(d_2) = 0.5662$
+
+\begin{align*}
+C &= S_0 \cdot N(d_1) - K \cdot e^{-rT} \cdot N(d_2) = \boxed{\$3.26}
+\end{align*}
+
+\item[(c)] Put-call parity: $C + K \cdot e^{-rT} = S_0 + P$
+
+\begin{align*}
+P &= C + K \cdot e^{-rT} - S_0 = \boxed{\$2.63}
+\end{align*}
+
+\item[(d)] Total premium $= C + P = \$3.26 + \$2.63 = \boxed{\$5.89}$
+
+Breakeven points:
+\begin{itemize}
+    \item Lower breakeven: $K - (C + P) = 50 - 5.89 = \$44.11$
+    \item Upper breakeven: $K + (C + P) = 50 + 5.89 = \$55.89$
+\end{itemize}
+
+For the straddle to be profitable, the stock must move more than \$5.89 (about 12\%) in either direction. You need the stock to be below \$44.11 or above \$55.89 at expiration.
+
+\item[(e)] The long straddle is a bet on \textbf{volatility}, not direction:
+\begin{itemize}
+    \item You profit if the stock moves significantly in \emph{either} direction
+    \item You lose if the stock stays near the strike price (low realized volatility)
+    \item Maximum loss occurs when $S_T = K$ exactly (both options expire worthless)
+\end{itemize}
+
+\textbf{When to use a long straddle}:
+\begin{itemize}
+    \item Before earnings announcements (expecting big move, unsure of direction)
+    \item Before major news events (FDA decisions, election results, legal rulings)
+    \item When implied volatility is too low---the market is underpricing expected movement
+\end{itemize}
+
+You're paying for volatility via the option premiums. You profit only if \emph{realized} volatility exceeds what was \emph{implied} by the option prices.
+
+\item[(f)] The \textbf{short straddle} is the mirror image of the long straddle. The counterparty:
+\begin{itemize}
+    \item \textbf{Collects} the total premium of \$5.89 upfront
+    \item \textbf{Profits} if the stock stays near the strike price (low realized volatility)
+    \item \textbf{Maximum profit} = \$5.89, occurring when $S_T = K = \$50$ exactly
+    \item \textbf{Loses} if the stock moves significantly in either direction
+    \item \textbf{Breakeven points} are the same: \$44.11 and \$55.89
+\end{itemize}
+
+The short straddle is a bet \emph{against} volatility. The seller profits when the market is calm and the stock price remains stable. This strategy is used when a trader believes implied volatility is too high---that the market is \emph{overpricing} expected movement. The risk is unlimited if the stock makes a large move.
+\end{enumerate}
+}

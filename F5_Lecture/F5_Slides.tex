@@ -1,0 +1,1588 @@
+% %!TEX TS-program = pdflatex
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{../eng_beamer}
+
+% Title page information
+\title[JRE 300 Finance Lecture \#5]{Finance Lecture \#5: Corporate Finance}
+\subtitle{JRE 300: Fundamentals of Accounting and Finance}
+\author{Kevin Mott}
+\institute{Rotman School of Management\\University of Toronto}
+\date{}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+\titlepage
+\end{frame}
+
+%===============================================================================
+% PREVIEW SLIDES
+
+% Slide: Preview of lecture
+\begin{frame}{Today's Roadmap}
+\textbf{Last week}: We learned how to use CAPM and WACC to evaluate projects.
+
+\vspace{1em}
+\textbf{This week}: Capital structure, taxes, central banks, and hedging.
+
+\vspace{1em}
+\textbf{Part 1: The Frictionless Benchmark (MM Theorem)}
+\begin{itemize}
+\item Value comes from assets, not financing: $V = E + D$
+\item How leverage affects equity beta and cost of equity
+\item WACC stays constant (in a frictionless world)
+\end{itemize}
+
+\vspace{1em}
+\textbf{Part 2: Taxes and Bankruptcy Costs}
+\begin{itemize}
+\item Interest tax shield increases firm value
+\item Bankruptcy costs destroy value
+\item Trade-off theory: balancing tax benefits and distress costs
+\item Corporate tax policy and equity market stability
+\end{itemize}
+\end{frame}
+
+% Slide: Preview parts 3 & 4
+\begin{frame}{Today's Roadmap (cont.)}
+\textbf{Part 3: Central Banks and the Real Economy}
+\begin{itemize}
+\item How the policy rate affects all interest rates
+\item Transmission mechanism: policy rate $\rightarrow$ WACC $\rightarrow$ investment
+\item Why central bank decisions affect firm valuations and hiring
+\item The real channel of monetary policy
+\end{itemize}
+
+\vspace{1em}
+\textbf{Part 4: Introduction to Hedging}
+\begin{itemize}
+\item Hedging vs.\ speculation
+\item Using options to manage risk (airline oil exposure example)
+\item Call and put options, payoff diagrams
+\item Preview: Options pricing next week
+\end{itemize}
+
+\vspace{1em}
+\textbf{Big picture}: Connecting firm-level finance decisions to macro policy and risk management.
+\end{frame}
+
+%===============================================================================
+% PART 1: VALUATION AND VALUE CREATION
+
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Part 1}}\\[1em]
+{\Large How to Value a Firm}
+\end{center}
+\end{frame}
+
+% Slide: What is a firm worth?
+\begin{frame}{What is a firm worth?}
+\textbf{Fundamental principle}:
+\begin{center}
+\large
+\textcolor{uoftblue}{Financial prices = the present value of future cash flows}
+\end{center}
+
+\vspace{1em}
+\textbf{For a firm, what are the cash flows?}
+
+\vspace{0.5em}
+\begin{itemize}
+\item Cash flows to \textcolor{uoftteal}{\textbf{equity holders}}: dividends and capital gains
+\item Cash flows to \textcolor{uoftteal}{\textbf{debt holders}}: interest and principal repayments
+\end{itemize}
+
+\vspace{1em}
+\textbf{How do we measure a firm's value?}
+\begin{itemize}
+\item We look at the \textbf{market values} of all outstanding claims
+\item These market values reflect the PV of expected cash flows to each group of investors
+\end{itemize}
+\end{frame}
+
+% Slide: Valuing different capital structures
+\begin{frame}{Valuing firms with different capital structures}
+\textbf{All-equity firm}:
+\begin{itemize}
+\item Firm value = \textcolor{uoftteal}{\textbf{Stock market capitalization}}
+\item Market cap = stock price $\times$ shares outstanding
+\item This is the PV of all future cash flows to shareholders
+\end{itemize}
+
+\vspace{1em}
+\textbf{What if the firm issues debt?}
+\begin{itemize}
+\item This creates cash flows (interest and principal) that now go to bondholders
+\item These are cash flows that would have otherwise gone to the firm's owners
+\item So we need to account for them: How much value is this?
+\item Answer: \textcolor{uoftteal}{\textbf{Market value of debt}} (what the debt trades for)
+\item This reflects the PV of promised payments to bondholders, adjusted for default risk
+\end{itemize}
+
+\vspace{1em}
+\textbf{If both equity and debt are used}:
+\begin{itemize}
+\item Firm value = Market value of equity + Market value of debt
+\item We sum the PVs of cash flows to each group of investors
+\end{itemize}
+\end{frame}
+
+% Slide: Firm value formula
+\begin{frame}{A firm's total value: $V = E + D$}
+\textbf{Our metric for a firm's value}:
+\[
+\boxed{V = E + D}
+\]
+
+\vspace{0.5em}
+where:
+\begin{itemize}
+\item $V$ = firm value
+\item $E$ = \textbf{market value} of equity (stock market cap)
+\item $D$ = \textbf{market value} of debt (what bonds trade for)
+\end{itemize}
+
+\vspace{1em}
+\textbf{Why market values?}
+\begin{itemize}
+\item Market prices reflect investors' assessments of future cash flows
+\item Book values (accounting values) are backward-looking 
+\item Market values tell us what claims are \emph{actually worth} today
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key insight}: A firm's value is the sum of the market values of all outstanding claims on its cash flows.
+\end{frame}
+
+% Slide: How can a firm change its value?
+\begin{frame}{How can a firm change its value?}
+\textbf{Question}: What increases $V = E + D$?\\ 
+\textbf{Answer}: Doing projects with \textcolor{uoftteal}{\textbf{NPV $>$ 0}}.
+
+\vspace{1em}
+\textbf{What do firms do?}
+\begin{enumerate}
+\item \textbf{Identify productive investment opportunities} (positive NPV projects)
+\begin{itemize}
+    \item New factories, R\&D, product launches, acquisitions
+    \item These projects generate cash flows worth more than they cost
+\end{itemize}
+
+\vspace{0.5em}
+\item \textbf{Raise financing to afford these investments}
+\begin{itemize}
+    \item Issue debt
+    \item Issue equity or use retained earnings
+\end{itemize}
+\end{enumerate}
+
+\vspace{0.5em}
+\textbf{The big picture}:
+\begin{itemize}
+\item Financial markets link excess capital (from savers/investors) to firms with productive uses for it
+\item This creates \textcolor{uoftteal}{\textbf{financial value}} (returns) and \textcolor{uoftteal}{\textbf{economic growth}} (real output)
+\end{itemize}
+\end{frame}
+
+% Slide: The puzzle
+\begin{frame}{A puzzle: Does financing affect NPV?}
+\textbf{We learned last week}:
+\begin{itemize}
+\item Cost of debt $<$ Cost of equity ($r_D < r_E$)
+\item Debt is cheaper because it's less risky (fixed payments, paid first in bankruptcy)
+\end{itemize}
+
+\vspace{1em}
+\textbf{Natural questions}:
+\begin{enumerate}
+    \item \textcolor{uoftblue}{If debt financing is cheaper, would using more debt raise project NPVs?}
+    \item \textcolor{uoftblue}{Why is there even a stock market if debt is cheaper?}
+\end{enumerate}
+
+\vspace{1em}
+\textbf{This seems like it should matter!}
+\begin{itemize}
+\item If we can finance projects more cheaply, doesn't that increase their value?
+\item Should all firms just use 100\% debt financing?
+\end{itemize}
+\end{frame}
+
+% Slide: Preview the answer
+\begin{frame}{Preview: Financing shouldn't matter}
+\textbf{The answer (spoiler alert)}:
+\begin{center}
+\large
+\textcolor{uoftblue}{No, financing choice doesn't affect NPV or firm value}
+\end{center}
+
+\vspace{0.5em}
+\textbf{Important}: For now, assume \textcolor{red}{\textbf{no taxes}} and \textcolor{red}{\textbf{no bankruptcy costs}} (frictionless world).
+
+\vspace{1em}
+\textbf{Why doesn't financing matter?}
+\begin{itemize}
+\item Yes, debt is cheaper than equity ($r_D < r_E$)
+\item But when you add more debt, equity becomes riskier
+\item Equity holders demand a higher return to compensate for the extra risk
+\item The cost of equity \textcolor{uoftteal}{\textbf{equilibrates}} to the debt level
+\item These forces exactly offset each other
+\end{itemize}
+
+\vspace{1em}
+\textbf{Result}: WACC stays constant regardless of capital structure
+
+\vspace{0.5em}
+Let's build the intuition for why this happens.
+\end{frame}
+
+% Slide: Why WACC stays constant
+% \begin{frame}{Why WACC stays constant: The offsetting forces}
+% \textbf{Recall from last week}:
+% \[
+% \text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D \times (1-\tau_c)
+% \]
+
+% \vspace{1em}
+% \textbf{What happens when we increase debt?}
+
+% \vspace{0.5em}
+% \begin{itemize}
+% \item \textcolor{red}{\textbf{Force 1}}: We're using more debt, which is cheaper ($r_D < r_E$)
+% \begin{itemize}
+%     \item This \emph{lowers} WACC
+% \end{itemize}
+
+% \vspace{0.3em}
+% \item \textcolor{uoftteal}{\textbf{Force 2}}: But equity becomes riskier (more leverage)
+% \begin{itemize}
+%     \item Equity holders now have a riskier residual claim
+%     \item They demand a higher return: $r_E$ increases
+%     \item This \emph{raises} WACC
+% \end{itemize}
+% \end{itemize}
+
+% \vspace{1em}
+% \textbf{Key insight}:
+% \begin{center}
+% These two forces \textcolor{uoftblue}{\textbf{exactly offset}} each other (ignoring taxes and bankruptcy costs)
+% \end{center}
+
+% \vspace{0.5em}
+% This is why WACC stays constant, and why capital structure doesn't create value by itself.
+% \end{frame}
+
+%===============================================================================
+% BRIDGE: PROJECT BETA VS EQUITY BETA
+
+% Slide: Understanding project risk vs equity risk
+\begin{frame}{Understanding the hurdle rate: Project beta vs. Equity beta}
+
+When we evaluate a project, the discount rate depends on the \textcolor{uoftteal}{\textbf{project's risk}}, not the firm's equity risk. 
+
+\vspace{1em}
+The project's systematic risk determines its required return (the hurdle rate). We often use \textcolor{uoftteal}{\textbf{comparables}} (industry averages) to estimate project beta. 
+
+\vspace{1em}
+But there's a complication: 
+
+\vspace{1em}
+\textcolor{uoftblue}{The beta of the \emph{project} is different from the beta of the \emph{equity}} 
+
+\vspace{1em}
+Let's see why this matters, starting with the simplest case.
+
+\end{frame}
+
+% Slide: All-equity firm case
+\begin{frame}{Starting point: The all-equity firm}
+Consider a firm with no debt (100\% equity financed).
+
+\vspace{1em}
+All cash flows from the project go to equity holders, so they bear all the project's systematic risk.
+
+\vspace{1em}
+Therefore: \textcolor{uoftteal}{\textbf{$\beta_E = \beta_{\text{Project}}$}}
+
+\vspace{1.5em}
+\textbf{Example}: Suppose a firm's projects have systematic risk $\beta_{\text{Project}} = 1.2$
+
+\vspace{0.5em}
+With no debt, equity holders bear all this risk, so $\beta_E = 1.2$.
+
+\vspace{1.5em}
+Simple so far. When there's no debt, equity beta equals project beta.
+
+\vspace{1em}
+Now let's add debt\ldots
+\end{frame}
+
+% Slide: Adding debt
+\begin{frame}{What happens when we add debt?}
+Suppose the firm issues debt (assume debt is risk-free: $\beta_D = 0$).
+
+\vspace{1em}
+Does the project's systematic risk change? \textcolor{red}{\textbf{No!}} The project's risk is determined by its cash flows, not how it's financed.
+
+\vspace{1em}
+But here's the problem:
+\begin{itemize}
+\item The project still has systematic risk $\beta_{\text{Project}} = 1.2$
+\item Debt holders now bear some of the firm's value, but \emph{zero} systematic risk ($\beta_D = 0$)
+\item Regardless of project outcomes, debtholders must be repaid---no exposure to systematic risk
+\item Equityholders now have more downside when things go wrong, more upside when things go well
+\item Their exposure to systematic risk \emph{rises}
+\end{itemize}
+
+\vspace{1em}
+For the project beta to stay constant, $\beta_E$ must \textbf{rise}.
+\end{frame}
+
+% Slide: The beta conservation equation
+\begin{frame}{Beta conservation: Why $\beta_E$ must rise}
+The firm's overall systematic risk is the weighted average of debt and equity risk:
+\[
+\beta_{\text{Project}} = \frac{E}{E+D} \times \beta_E + \frac{D}{E+D} \times \beta_D
+\]
+
+\vspace{0.5em}
+Solving for $\beta_E$:
+\[\beta_E = \beta_{\text{Project}} + \frac{D}{E} \times (\beta_{\text{Project}} - \beta_D)\]
+
+\vspace{0.5em}
+With risk-free debt ($\beta_D = 0$): $\beta_E = \beta_{\text{Project}} \times (1 + D/E)$
+
+\vspace{0.5em}
+As leverage ratio $D/E$ increases, $\beta_E$ must increase proportionally to keep $\beta_{\text{Project}}$ constant. Equity holders now bear \emph{amplified} systematic risk.
+\end{frame}
+
+% Slide: Numerical example
+\begin{frame}{Example: How leverage amplifies equity beta}
+Project beta: $\beta_{\text{Project}} = 1.2$, debt is risk-free: $\beta_D = 0$
+
+\vspace{.5em}
+\textbf{All-equity firm} ($D/E = 0$):
+\[
+\beta_E = 1.2 \times (1 + 0) = 1.2
+\]
+
+\vspace{.5em}
+\textbf{Add debt} to achieve $D/E = 0.5$:
+\[
+\beta_E = 1.2 \times (1 + 0.5) = 1.8
+\]
+
+\vspace{.5em}
+\textbf{More debt}, $D/E = 1$:
+\[
+\beta_E = 1.2 \times (1 + 1) = 2.4
+\]
+
+\vspace{.5em}
+Even though the project's risk hasn't changed ($\beta_{\text{Project}} = 1.2$ throughout), equity beta doubles from 1.2 to 2.4 as leverage increases.
+\end{frame}
+
+% Slide: Connecting to cost of equity
+\begin{frame}{Cost of equity rises with leverage}
+We just showed: $\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)$
+
+\vspace{1em}
+Using CAPM for equity and debt:
+\begin{align*}
+r_E &= r_f + \beta_E \times (\mathbb{E}[R_m] - r_f) \\[0.5em]
+&= r_f + \left[\beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)\right] \times (\mathbb{E}[R_m] - r_f) \\[0.5em]
+&= r_f + \beta_{\text{Project}} \times (\mathbb{E}[R_m] - r_f) + \frac{D}{E}(\beta_{\text{Project}} - \beta_D) \times (\mathbb{E}[R_m] - r_f) \\[0.5em]
+&= r_0 + \frac{D}{E}\left[\beta_{\text{Project}} \times (\mathbb{E}[R_m] - r_f) - \beta_D \times (\mathbb{E}[R_m] - r_f)\right] \\[0.5em]
+&= r_0 + \frac{D}{E}\left[(r_0 - r_f) - (r_D - r_f)\right] = \boxed{r_0 + \frac{D}{E}(r_0 - r_D)}
+\end{align*}
+\end{frame}
+
+% Slide: Interpreting the formula
+\begin{frame}{Interpreting the cost of equity formula}
+\[
+\underbrace{r_E}_{\text{Levered COE}} = \underbrace{r_0}_{\text{Unlevered COE}} + \underbrace{(r_0 - r_D) \times \frac{D}{E}}_{\text{Leverage premium}}
+\]
+
+\textbf{Unlevered cost of equity} ($r_0$): The return equity holders require when the firm has no debt. This compensates them for the project's systematic risk.
+
+\vspace{1em}
+\textbf{Leverage premium} $(r_0 - r_D) \times D/E$: The \emph{additional} return equity holders demand to compensate for increased risk exposure from financial leverage.
+
+\vspace{1em}
+As debt increases, equity holders bear amplified systematic risk (the residual claim gets riskier). The leverage premium grows proportionally with $D/E$ to compensate for this increased exposure.
+
+\vspace{0.5em}
+Note: With risk-free debt ($r_D = r_f$), this becomes $r_E = r_0 + (r_0 - r_f) \times D/E$.
+\end{frame}
+
+% Slide: What does this mean for WACC?
+\begin{frame}{What does this mean for WACC?}
+WACC is the \textcolor{uoftteal}{\textbf{weighted average opportunity cost}} of the pool of investors in a project.
+
+\vspace{1em}
+\begin{center}
+\large
+\textcolor{uoftblue}{WACC equilibrates to the risk level of the \emph{project}, not the equity}
+\end{center}
+
+\vspace{1em}
+The project has a fixed systematic risk ($\beta_{\text{Project}}$) that determines its required return. As we change $D/E$, we're just \textbf{reallocating risk} among investors.
+
+\vspace{1em}
+\textcolor{uoftteal}{\textbf{Cost of equity}} and \textcolor{uoftteal}{\textbf{cost of debt}} are compensation to investors according to their \emph{exposure}.
+
+\vspace{1.5em}
+Higher debt $\rightarrow$ equity bears more risk $\rightarrow$ $r_E$ rises. But debt is cheaper, and we're using more of it. These forces offset.
+
+\vspace{1em}
+\textcolor{uoftblue}{\textbf{WACC stays constant at the project's risk level.}}
+
+\vspace{1em}
+Capital structure doesn't change project value---it just changes how risk and returns are distributed among investors.
+\end{frame}
+
+% Slide: Plugging into WACC
+\begin{frame}{What happens when we plug this into WACC?}
+Start with WACC and substitute our formula for $r_E$:
+
+\begin{align*}
+\text{WACC} &= \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D \\[0.5em]
+&= \frac{E}{E+D} \times \left[r_0 + (r_0 - r_D) \times \frac{D}{E}\right] + \frac{D}{E+D} \times r_D \\[0.5em]
+&= \frac{E}{E+D} \times r_0 + \frac{D}{E+D} \times (r_0 - r_D) + \frac{D}{E+D} \times r_D \\[0.5em]
+&= \frac{E}{E+D} \times r_0 + \frac{D}{E+D} \times r_0 \\[0.5em]
+&= \boxed{r_0}
+\end{align*}
+
+\vspace{0.5em}
+WACC equals the unlevered cost of equity, regardless of leverage! The rising cost of equity exactly offsets the use of cheaper debt.
+\end{frame}
+
+% Slide: Visual representation of cost of capital vs leverage
+\begin{frame}{Capital Structure and Cost of Capital (No Tax)}
+\vspace{0.5em}
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Axes
+\draw[->] (0,0) -- (8,0) node[right] {Debt-to-Equity Ratio ($D/E$)};
+\draw[->] (0,0) -- (0,6) node[above] {Cost of Capital};
+
+% r_D line (constant at 3% = 0.6 units)
+\draw[very thick, uoftblue] (0,0.6) -- (7.5,0.6);
+\node[right, uoftblue] at (7.5,0.6) {$r_D$};
+
+% r_0 / WACC line (constant at 11.4% = 2.28 units)
+\node[left, uoftteal] at (0,2.28) {$r_0$};
+\draw[very thick, uoftteal] (0,2.28) -- (7.5,2.28);
+\node[right, uoftteal] at (7.5,2.28) {WACC};
+
+% r_E line (starts at r_0, increases with slope (r_0 - r_D))
+% At D/E=0: r_E = 11.4% = 2.28
+% At D/E=1: r_E = 19.8% = 3.96
+% At D/E=2: r_E = 28.2% = 5.64
+\draw[very thick, red] (0,2.28) -- (7.5,5.82);
+\node[right, red] at (7.5,5.82) {$r_E = r_0 + \frac{D}{E}(r_0-r_D)$};
+
+\end{tikzpicture}
+\end{center}
+
+Cost of equity rises with leverage, but WACC stays constant
+\end{frame}
+
+% Slide: Numerical example of WACC invariance
+\begin{frame}{Example: WACC stays constant as leverage changes}
+\textbf{Setup}: $r_f = 3\%$, market risk premium $= 7\%$, $\beta_{\text{Project}} = 1.2$, risk-free debt ($\beta_D = 0$) at $r_D = 3\%$
+
+\vspace{1em}
+\textbf{All-equity firm} ($D/E = 0$):
+\begin{itemize}
+\item $\beta_E = 1.2 \times (1 + 0) = 1.2$
+\item $r_E = 3\% + 1.2 \times 7\% = 11.4\%$
+\item $\text{WACC} = 100\% \times 11.4\% + 0\% \times 3\% = \textcolor{uoftteal}{\mathbf{11.4\%}}$
+\end{itemize}
+
+\vspace{1em}
+\textbf{Now add debt} to $D/E = 1$ (50\% debt, 50\% equity):
+\begin{itemize}
+\item $\beta_E = 1.2 \times (1 + 1) = 2.4$
+\item $r_E = 3\% + 2.4 \times 7\% = 19.8\%$
+\item $\text{WACC} = 50\% \times 19.8\% + 50\% \times 3\% = 9.9\% + 1.5\% = \textcolor{uoftteal}{\mathbf{11.4\%}}$
+\end{itemize}
+
+\vspace{1em}
+Cost of equity nearly doubled (from 11.4\% to 19.8\%), but WACC stayed constant because we're using cheaper debt.
+\end{frame}
+
+% Slide: Part 1 Summary
+\begin{frame}{Summary: The Modigliani-Miller Theorem}
+\textbf{What we've shown}:
+\begin{itemize}
+\item Capital structure is \textcolor{uoftblue}{\textbf{irrelevant}} to firm value in a frictionless world
+\item Leverage increases equity beta: $\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)$
+\item Cost of equity rises with leverage: $r_E = r_0 + (r_0 - r_D) \times D/E$
+\item But WACC stays constant: $\text{WACC} = r_0$ regardless of $D/E$
+\item Changing capital structure just \textbf{reallocates risk} among investors
+\end{itemize}
+
+\vspace{1em}
+This is the \textcolor{uoftteal}{\textbf{Modigliani-Miller Theorem}} (1958)---one of the most important results in finance.
+
+\vspace{1em}
+\textbf{Key assumptions we made}:
+\begin{itemize}
+\item \textcolor{red}{\textbf{No taxes}} (no interest tax shield)
+\item \textcolor{red}{\textbf{No bankruptcy costs}}
+\end{itemize}
+
+\vspace{0.5em}
+Part 2 will relax these assumptions and see when capital structure \emph{does} matter.
+\end{frame}
+
+%===============================================================================
+% PART 2: REAL-WORLD FRICTIONS
+
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Part 2}}\\[1em]
+{\Large Real-World Frictions:\\Taxes and Bankruptcy Costs}
+\end{center}
+\end{frame}
+
+% Slide: What we missed
+\begin{frame}{What our analysis missed}
+In Part 1, we showed that capital structure doesn't matter in a frictionless world.
+
+\vspace{1em}
+But we made an important simplifying assumption: \textcolor{red}{\textbf{no taxes}}.
+
+\vspace{1em}
+In reality, there's a crucial asymmetry in the tax code:
+
+\vspace{0.5em}
+\begin{center}
+\large
+\textcolor{uoftblue}{Interest payments on debt are \textbf{tax-deductible}}
+\end{center}
+
+\vspace{1em}
+Dividend payments and retained earnings (equity financing) are \emph{not} tax-deductible.
+
+\vspace{1em}
+This creates a significant advantage for debt financing. Let's see how.
+\end{frame}
+
+% Slide: Tax shield example
+\begin{frame}{Example: The tax shield in action}
+\textbf{Consider two identical firms}:
+\begin{itemize}
+\item Both have EBIT = \$100 per year
+\item Corporate tax rate $\tau_c = 25\%$
+\item \textbf{Firm A}: No debt
+\item \textbf{Firm B}: \$500 of debt at 5\% interest
+\end{itemize}
+
+\vspace{1em}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Firm A (No Debt)} & \textbf{Firm B (Debt)} \\
+\midrule
+EBIT & \$100 & \$100 \\
+Interest & \$0 & \$25 \\
+Taxable income & \$100 & \$75 \\
+Taxes (25\%) & \$25 & \$18.75 \\
+\midrule
+\textbf{Cash to investors} & \textbf{\$75} & \textbf{\$81.25} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+Firm B pays \$6.25 less in taxes. This is the \textcolor{uoftteal}{\textbf{tax shield}} = Interest $\times$ $\tau_c$ = \$25 $\times$ 0.25 = \$6.25.
+\end{frame}
+
+% Slide: WACC with taxes
+\begin{frame}{Redoing the analysis: WACC with taxes}
+In Part 1, we had:
+\[
+\text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D
+\]
+
+\vspace{1em}
+But this ignored the tax deductibility of interest. The \emph{after-tax} cost of debt is lower:
+\[
+\text{After-tax cost of debt} = r_D \times (1 - \tau_c)
+\]
+
+\vspace{1em}
+So the correct WACC formula is:
+\[
+\boxed{\text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D \times (1 - \tau_c)}
+\]
+
+\vspace{1em}
+The $(1 - \tau_c)$ term captures the tax shield. Since $\tau_c > 0$, this lowers WACC.
+\end{frame}
+
+% Slide: Equity beta with taxes
+\begin{frame}{Equity beta decreases (compared to no-tax case)}
+The equity beta relationship changes:
+
+\vspace{1em}
+\textbf{Without taxes} (from Part 1):
+\[
+\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)
+\]
+
+\vspace{1em}
+\textbf{With taxes}, the effective leverage is lower because of the tax shield:
+\[
+\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D) \times (1 - \tau_c)
+\]
+
+\vspace{1em}
+The $(1 - \tau_c)$ term captures how the tax shield reduces equity holders' systematic risk exposure.
+\end{frame}
+
+% Slide: Cost of equity with taxes
+\begin{frame}{Cost of equity with taxes (MM Proposition II)}
+Starting from CAPM with the adjusted beta:
+\begin{align*}
+r_E &= r_f + \beta_E \times (\mathbb{E}[R_m] - r_f) \\[0.5em]
+&= r_f + \left[\beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)(1 - \tau_c)\right] \times (\mathbb{E}[R_m] - r_f) \\[0.5em]
+&= r_0 + \frac{D}{E}(r_0 - r_D)(1 - \tau_c)
+\end{align*}
+\textbf{Result}:
+\[
+\boxed{r_E = r_0 + (r_0 - r_D) \times \frac{D}{E} \times (1 - \tau_c)}
+\]
+The leverage premium is \textbf{smaller} with taxes because the tax shield cushions equity holders from systematic risk.
+\end{frame}
+
+% Slide: Deriving WACC with taxes
+\begin{frame}{What is WACC with the new cost of equity?}
+We have: $r_E = r_0 + (r_0 - r_D) \times \frac{D}{E} \times (1 - \tau_c)$
+
+\vspace{1em}
+Plugging into WACC:
+
+\begin{align*}
+\text{WACC} &= \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D \times (1 - \tau_c) \\[0.5em]
+&= \frac{E}{E+D} \times \left[r_0 + (r_0 - r_D) \times \frac{D}{E} \times (1 - \tau_c)\right] + \frac{D}{E+D} \times r_D \times (1 - \tau_c) \\[0.5em]
+&= \frac{E}{E+D} \times r_0 + \frac{D}{E+D} \times (r_0 - r_D) \times (1 - \tau_c) + \frac{D}{E+D} \times r_D \times (1 - \tau_c) \\[0.5em]
+&= \frac{E}{E+D} \times r_0 + \frac{D}{E+D} \times (1 - \tau_c) \times [(r_0 - r_D) + r_D] \\[0.5em]
+&= \frac{E}{E+D} \times r_0 + \frac{D}{E+D} \times (1 - \tau_c) \times r_0 \\[0.5em]
+&= r_0 \times \left[\frac{E}{E+D} + \frac{D}{E+D} \times (1 - \tau_c)\right]
+\end{align*}
+\end{frame}
+
+% Slide: WACC simplifies
+\begin{frame}{WACC with taxes}
+\begin{align*}
+\text{WACC} &= r_0 \times \left[\frac{E}{E+D} + \frac{D}{E+D} \times (1 - \tau_c)\right] \\[0.5em]
+&= r_0 \times \left[\frac{E}{E+D} + \frac{D}{E+D} - \frac{D}{E+D} \times \tau_c\right] \\[0.5em]
+&= \boxed{r_0 \times \left[1 - \frac{D}{E+D} \times \tau_c\right]}
+\end{align*}
+
+\vspace{1em}
+As leverage increases ($D \uparrow$), WACC decreases.
+
+\vspace{0.5em}
+\textbf{Why lower WACC increases firm value}:
+\begin{itemize}
+\item Discount future cash flows by less $\rightarrow$ higher present value
+\item More projects have positive NPV (lower hurdle rate)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Capital Structure and Cost of Capital (Taxes)}
+\vspace{0.5em}
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+% Axes
+\draw[->] (0,0) -- (8,0) node[right] {Debt-to-Equity Ratio ($D/E$)};
+\draw[->] (0,0) -- (0,6) node[above] {Cost of Capital};
+
+% r_D line (constant at 3% = 0.6 units)
+\draw[very thick, uoftblue] (0,0.6) -- (7.5,0.6);
+\node[right, uoftblue] at (7.5,0.6) {$r_D$};
+
+% r_0 / WACC line (declining toward r_D as leverage increases)
+\node[left, uoftteal] at (0,2.28) {$r_0$};
+% WACC curve: starts at r_0 = 2.28, declines toward r_D*(1-tau_c)
+% Using a smooth curve that asymptotically approaches r_D region
+\draw[very thick, uoftteal, domain=0:7.5, smooth, samples=100]
+    plot (\x, {2.28 - 1.4*(1 - exp(-0.4*\x))});
+\node[right, uoftteal] at (7.5,1.0) {WACC $= r_0\times\left[1-\frac{D}{E+D}\tau_c\right]$};
+
+% r_E line (starts at r_0, increases with slope (r_0 - r_D))
+% At D/E=0: r_E = 11.4% = 2.28
+% At D/E=1: r_E = 19.8% = 3.96
+% At D/E=2: r_E = 28.2% = 5.64
+\draw[very thick, red] (0,2.28) -- (7.5,5.2);
+\node[right, red] at (7.5,5.2) {$r_E = r_0 + \frac{D}{E}(r_0-r_D)(1-\tau_c)$};
+
+\end{tikzpicture}
+\end{center}
+
+Cost of equity rises with leverage, WACC falls (tax shield savings)
+\end{frame}
+
+% Slide: So why not 100% debt?
+\begin{frame}{So why not finance with 100\% debt?}
+\textbf{We just showed}: More debt lowers WACC.
+
+\vspace{1em}
+\textbf{This means}:
+\begin{itemize}
+\item Discount future cash flows at a lower rate $\rightarrow$ higher firm value
+\item Lower hurdle rate $\rightarrow$ more projects have positive NPV
+\item Greater investment opportunities for value-creating projects
+\end{itemize}
+
+\vspace{1em}
+\textbf{So why not use 100\% debt?}
+
+\vspace{1em}
+\begin{center}
+\textcolor{red}{\Large \textbf{Bankruptcy costs}}
+\end{center}
+\end{frame}
+
+% Slide: Bankruptcy costs destroy value
+\begin{frame}{Bankruptcy costs destroy value}
+Too much debt increases the probability of \textbf{financial distress} and \textbf{bankruptcy}.
+
+\vspace{1em}
+These costs can destroy significant value, offsetting the tax benefits of debt.
+
+\vspace{1em}
+The optimal capital structure balances the \textcolor{uoftteal}{\textbf{tax benefits}} of debt against the \textcolor{red}{\textbf{bankruptcy costs}} of too much debt.
+\end{frame}
+
+% Slide: What is bankruptcy?
+\begin{frame}{What is bankruptcy?}
+\textbf{Common misconception}: Bankruptcy = business shuts down.\\
+\textbf{Reality}: Bankruptcy is a \textcolor{uoftteal}{\textbf{legal process}} for handling financial distress (cash flows insufficient to pay interest obligations).
+
+\vspace{1em}
+\textbf{Two main types}:
+\begin{enumerate}
+\item \textbf{Reorganization} (Chapter 11 in the US):
+\begin{itemize}
+    \item Firm continues operating
+    \item Renegotiates debt with creditors under court supervision
+    \item Emerges with new capital structure (often converting debt to equity)
+    \item Examples: General Motors, American Airlines
+\end{itemize}
+\item \textbf{Liquidation} (Chapter 7 in the US):
+\begin{itemize}
+    \item Firm ceases operations
+    \item Assets sold off to pay creditors
+    \item Firm dissolves
+\end{itemize}
+\end{enumerate}
+
+\vspace{0.5em}
+Most large firms file for reorganization, not liquidation.
+\end{frame}
+
+% Slide: The bankruptcy mechanism
+\begin{frame}{How does bankruptcy risk affect firms?}
+\textbf{The mechanism}: When market participants expect higher probability of bankruptcy:
+
+\vspace{1em}
+\textbf{Lenders demand compensation for default risk}:
+\begin{itemize}
+\item If you might not repay, lenders won't lend at the risk-free rate
+\item They charge a \textcolor{red}{\textbf{higher cost of debt}} ($r_D \uparrow$)
+\item Equivalently: they lend at a discount (pay less than face value for bonds)
+\end{itemize}
+
+\vspace{1em}
+\textbf{This creates a feedback loop}:
+\begin{enumerate}
+\item More debt $\rightarrow$ higher bankruptcy probability
+\item Higher bankruptcy risk $\rightarrow$ lenders charge higher $r_D$
+\item Higher $r_D$ $\rightarrow$ harder to service debt $\rightarrow$ even higher bankruptcy risk
+\end{enumerate}
+
+\vspace{1em}
+\textcolor{uoftblue}{\textbf{Key insight}}: The \emph{expectation} of bankruptcy raises borrowing costs, which itself increases financial distress---even before actual bankruptcy occurs.
+\end{frame}
+
+% Slide: Types of bankruptcy costs
+\begin{frame}{Two types of bankruptcy costs}
+\textbf{1. Direct bankruptcy costs}:
+\begin{itemize}
+\item Legal fees, accounting fees, court costs
+\item Administrative expenses of reorganization
+\item Typically 3-7\% of firm value for large firms
+\end{itemize}
+
+\vspace{1em}
+\textbf{2. Indirect costs (financial distress)}:
+\begin{itemize}
+\item \textbf{Lost customers}: worried about warranties, future service
+\item \textbf{Lost suppliers}: demand cash up front, refuse credit
+\item \textbf{Lost employees}: talented workers leave for more stable firms
+\item \textbf{Underinvestment}: can't raise capital for positive NPV projects
+\item \textbf{Asset fire sales}: forced to sell assets below fair value
+\end{itemize}
+
+\vspace{1em}
+Indirect costs are often \textcolor{red}{\textbf{much larger}} than direct costs and begin \emph{before} actual bankruptcy.
+\end{frame}
+
+% Slide: Financial distress example
+\begin{frame}{Example: Financial distress costs}
+\textbf{Consider an airline with high debt levels}:
+
+\vspace{1em}
+When the airline appears financially troubled:
+\begin{itemize}
+\item \textbf{Customers} stop buying tickets (fear airline will shut down)
+\item \textbf{Suppliers} demand cash payment for fuel and parts
+\item \textbf{Pilots and mechanics} leave for more stable airlines
+\item \textbf{Lessors} refuse to lease new aircraft
+\end{itemize}
+
+\vspace{1em}
+\textbf{Result}:
+\begin{itemize}
+\item Revenue collapses, costs spike
+\item The firm may fail even if it would have been viable with less debt
+\item Self-fulfilling prophecy: high debt creates fragility
+\end{itemize}
+\end{frame}
+
+% Slide: The trade-off theory
+\begin{frame}{The trade-off theory of capital structure}
+\textbf{The optimization problem} (loose formulation):
+
+\vspace{1em}
+\[
+\max_{D/E} \quad \sum_{t=1}^{\infty} \frac{CF_t}{\text{WACC}^t} - \text{PV(Bankruptcy Costs)}
+\]
+
+\vspace{0.5em}
+subject to:
+\[
+\text{WACC} = r_0 \times \left[1 - \frac{D}{E+D} \times \tau_c\right]
+\]
+
+\vspace{1em}
+\textbf{Trade-off}:
+\begin{itemize}
+\item Higher $D/E$ $\rightarrow$ lower WACC $\rightarrow$ higher PV of cash flows and tax shield
+\item But higher $D/E$ $\rightarrow$ higher PV(Bankruptcy Costs) $\rightarrow$ destroys value
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Capital Structure and Cost of Capital (With Bankruptcy Costs)}
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+% Axes
+\draw[->] (0,0) -- (8,0) node[right] {Debt-to-Equity Ratio ($D/E$)};
+\draw[->] (0,0) -- (0,6) node[above] {Cost of Capital};
+
+% Threshold marker (vertical dashed line)
+\draw[dashed, gray] (5,0) -- (5,5.5);
+\node[below, gray, font=\small] at (5,-0.3) {Distress region $\to$};
+
+% r_D line (flat then increasing after threshold)
+\draw[very thick, uoftblue] (0,0.6) -- (5,0.6);
+\draw[very thick, uoftblue, domain=5:7.5, smooth, samples=50]
+    plot (\x, {0.6 + 0.4*(\x-5)^1.5});
+\node[right, uoftblue] at (7.5,1.8) {$r_D$};
+
+% r_0 starting point
+\node[left, uoftteal] at (0,2.28) {$r_0$};
+
+% WACC curve: starts at r_0, declines exponentially (tax shield), then increases after distress threshold
+% Part 1: Before distress (0 to 5) - decreases like the no-bankruptcy case
+\draw[very thick, uoftteal, domain=0:5, smooth, samples=100]
+    plot (\x, {2.28 - 1.4*(1 - exp(-0.4*\x))});
+% Part 2: After distress (5 to 7.5) - increases due to bankruptcy costs
+\draw[very thick, uoftteal, domain=5:7.5, smooth, samples=50]
+    plot (\x, {2.28 - 1.4*(1 - exp(-0.4*\x)) + 0.4*(\x-5)^1.8});
+\node[above, uoftteal] at (5,1.05) {WACC};
+
+% r_E line (starts at r_0, increases with leverage, steeper after threshold)
+\draw[very thick, red, domain=0:5, smooth, samples=50]
+    plot (\x, {2.28 + 0.58*\x});
+\draw[very thick, red, domain=5:7.5, smooth, samples=50]
+    plot (\x, {5.18 + 0.75*(\x-5)});
+\node[right, red] at (7.5,6.0) {$r_E$};
+
+\end{tikzpicture}
+\end{center}
+
+Initially: tax shield lowers WACC. Beyond threshold: bankruptcy costs dominate
+\end{frame}
+
+% Slide: The challenge of measurement
+\begin{frame}{How hard is this to measure in practice?}
+\textbf{Very hard.} This is an active area of study in academic corporate finance.
+
+\vspace{1em}
+\textbf{The challenges}:
+\begin{enumerate}
+\item \textbf{Corporate Taxation}: 
+\begin{itemize}
+    \item Depends on tax rates: corporate tax code is extremely complex
+    \item Future tax rates and debt policy are uncertain (elections?)
+\end{itemize}
+
+\vspace{0.5em}
+\item \textbf{PV(Bankruptcy Costs)}: 
+\begin{itemize}
+    \item What is the probability of bankruptcy? (model-dependent)
+    \item How large are indirect costs? (hard to observe, vary by industry)
+    \item How do bankruptcy costs vary with systematic risk and macro conditions?
+\end{itemize}
+
+\item \textbf{Other Frictions:}
+\begin{itemize}
+    \item Capital adjustment costs: it's expensive to move capital around
+    \item Raising additional equity: costly and negative signal
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+% Slide: Mini summary
+\begin{frame}{What should managers do?}
+\textbf{Bottom line for capital structure choice}:
+
+\vspace{1em}
+Managers should choose the debt-to-equity ratio that balances:
+
+\vspace{0.5em}
+\begin{enumerate}
+\item \textcolor{uoftteal}{\textbf{Reducing WACC}} through the interest tax shield
+\item \textcolor{red}{\textbf{Bankruptcy costs}} from financial distress
+\item \textcolor{uoftblue}{\textbf{Levered equity risk}} borne by shareholders
+\end{enumerate}
+
+\vspace{1em}
+This optimization depends heavily on:
+\begin{itemize}
+\item The firm's systematic risk ($\beta_A$)
+\item Industry characteristics (cash flow stability, asset tangibility)
+\item The macroeconomic environment
+\item \textbf{Corporate tax policy}
+\end{itemize}
+
+\vspace{1em}
+\textbf{Speaking of taxes}\ldots let's dig deeper into corporate tax policy.
+
+\vspace{0.5em}
+(Sounds boring, is actually \textbf{super interesting}.)
+\end{frame}
+
+
+
+
+
+
+% Slide: Interpreting the tax effect on equity
+\begin{frame}{What do taxes do to equity holders?}
+Recall: $\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D) \times (1 - \tau_c)$
+
+\vspace{1em}
+\textbf{Higher} corporate tax rate $\tau_c$ means:
+
+\vspace{0.5em}
+\textbf{1. Lower systematic risk exposure}:
+\begin{itemize}
+\item The $(1 - \tau_c)$ term dampens how much leverage amplifies equity beta
+\item Tax shield cushions equity holders from systematic risk
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{2. Lower expected returns}:
+\begin{itemize}
+\item Since $r_E = r_0 + (r_0 - r_D) \times \frac{D}{E} \times (1 - \tau_c)$, the leverage premium is smaller
+\item Less risk $\rightarrow$ lower required return (CAPM)
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{3. Lower cash flows}:
+\begin{itemize}
+\item After-tax profits are $(1 - \tau_c) \times \text{EBIT}$
+\item Higher taxes mean less cash available for dividends
+\end{itemize}
+\end{frame}
+
+% Slide: Corporate taxes amplify equity market risk
+\begin{frame}{Corporate tax rates amplify equity market risk}
+\textbf{A macro perspective}: Since $\beta_E$ contains $(1 - \tau_c)$, \textcolor{uoftteal}{\textbf{higher corporate tax rates are a stabilizer for equity (stock) markets}}.
+
+\vspace{1em}
+\textbf{When $\tau_c$ falls} (e.g., tax cuts):
+\begin{itemize}
+\item $(1 - \tau_c) \uparrow$ $\rightarrow$ equity beta rises for levered firms
+\item Stock market becomes \textbf{more sensitive} to macroeconomic shocks
+\item Equity returns become \textbf{more volatile} during recessions and expansions
+\end{itemize}
+
+\vspace{1em}
+\textbf{Broader spillover effects}:
+\begin{enumerate}
+\item \textbf{Wealth inequality}: Equity ownership concentrated among wealthy; higher volatility amplifies wealth swings
+\item \textbf{Retirement stability}: Pensions hold equities; more systematic risk means less predictable retirement outcomes
+\item \textbf{Financing opportunities}: Higher equity volatility raises cost of capital, making it harder to fund risky projects
+\end{enumerate}
+\end{frame}
+
+% Slide: Policy comparison - US vs Canada
+\begin{frame}{Policy comparison: US vs.\ Canada}
+\textbf{Corporate tax environment}:
+\begin{itemize}
+\item \textbf{United States}: Lower corporate tax rates 
+\item \textbf{Canada}: Higher corporate tax rates 
+\end{itemize}
+
+\vspace{1em}
+\textbf{Implications for equity markets}:
+\begin{itemize}
+\item \textbf{US}: Lower $\tau_c$ $\rightarrow$ higher $(1 - \tau_c)$ $\rightarrow$ \textcolor{red}{\textbf{more systematic risk}} in equity markets
+\item \textbf{Canada}: Higher $\tau_c$ $\rightarrow$ lower $(1 - \tau_c)$ $\rightarrow$ \textcolor{uoftteal}{\textbf{less systematic risk}} in equity markets
+\end{itemize}
+
+\vspace{1em}
+\textbf{Historical performance}:
+\begin{itemize}
+\item US equity markets: Higher returns, higher volatility (more risk-taking, innovation)
+\item Canadian equity markets: Lower returns, lower volatility (more stability)
+\end{itemize}
+
+\vspace{1em}
+\textbf{The trade-off}:
+\begin{itemize}
+\item \textcolor{uoftteal}{\textbf{Innovation}}: Lower taxes $\rightarrow$ more risk-taking $\rightarrow$ growth and innovation
+\item \textcolor{uoftblue}{\textbf{Stability}}: Higher taxes $\rightarrow$ less volatility $\rightarrow$ retirement security, less inequality
+\end{itemize}
+\end{frame}
+
+%===============================================================================
+% PART 3: CENTRAL BANKS AND CAPITAL STRUCTURE
+%===============================================================================
+
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Part 3}}\\
+\vspace{0.5em}
+{\Large Central Banks, Interest Rates,\\and the Real Economy}
+\end{center}
+\end{frame}
+
+% Slide: Why central banks matter for firms
+\begin{frame}{Why do central banks matter for firms?}
+We now have enough understanding in place to understand why central banks adjusting interest rates is so effective for adjusting the economic growth rate.
+
+\vspace{1em}
+\textbf{The connection to what we've learned}:
+\begin{itemize}
+\item Central banks control the \textcolor{uoftteal}{\textbf{policy rate}} (Bank of Canada's overnight rate, Fed's federal funds rate)
+\item This affects $r_f$ (risk-free rate) and $r_D$ (cost of debt)
+\item Which affects \textcolor{uoftblue}{\textbf{WACC}}
+\item Which affects firm valuations and the \textcolor{red}{\textbf{NPV of investment projects}}
+\item Which affects hiring, growth, and the real economy
+\end{itemize}
+
+\vspace{1em}
+Central bank policy directly impacts corporate finance decisions we've been studying.
+\end{frame}
+
+% Slide: What is the policy rate?
+\begin{frame}{What is the policy rate?}
+\textbf{The policy rate} is the interest rate that the central bank sets and controls.
+
+\vspace{1em}
+\textbf{Different names in different countries}:
+\begin{itemize}
+\item \textbf{Canada}: Overnight rate (set by the Bank of Canada)
+\item \textbf{United States}: Federal funds rate (set by the Federal Reserve)
+\end{itemize}
+
+\vspace{1em}
+\textbf{What does it actually control?}
+\begin{itemize}
+\item The target rate for \textcolor{uoftteal}{\textbf{interbank lending}}
+\item Banks lend reserves to each other overnight to meet regulatory requirements
+\item The central bank sets the target for this rate
+\end{itemize}
+
+\vspace{1em}
+\textbf{How can the central bank control this rate?}
+\begin{itemize}
+\item Conducts open market operations (buying/selling government bonds)
+\item Adjusts the supply of reserves in the banking system
+\item This pushes the interbank rate to the target level
+\end{itemize}
+\end{frame}
+
+% Slide: Step 1 - Central bank sets policy rate
+\begin{frame}{Step 1: Central bank sets the policy rate}
+\textbf{The starting point}: Central bank announces a change to the policy rate: 1pp increase to combat inflation.
+
+\vspace{1em}
+\textbf{Example}: Bank of Canada raises overnight rate from 4\% to 5\%.
+
+\vspace{1em}
+\textbf{What is the overnight rate?}
+\begin{itemize}
+\item The target rate for banks lending to each other overnight
+\item Banks need to borrow/lend reserves to meet daily requirements
+\item This becomes the \textcolor{uoftteal}{\textbf{baseline cost of funds}} for banks
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key point}: When the overnight rate rises to 5\%, banks' opportunity cost of borrowing and lending funds with each other goes up to 5\%.
+\end{frame}
+
+% Slide: Step 2 - Banks pass on higher costs
+\begin{frame}{Step 2: Banks pass on higher costs to borrowers}
+\textbf{Question}: If banks' opportunity cost of funds goes up, what about the rate they charge private borrowers?
+
+\vspace{1em}
+\textbf{Answer}: It goes \textcolor{red}{\textbf{up}}.
+
+\vspace{1em}
+\textbf{Why?}
+\begin{itemize}
+\item Banks can now earn 5\% by lending to other banks (risk-free)
+\item To lend to private borrowers (households, firms), they need to earn \emph{at least} 5\% + a risk premium
+\item Otherwise, they'd just lend to other banks instead
+\end{itemize}
+
+\vspace{1em}
+\textbf{Result}:
+\begin{itemize}
+\item \textbf{Mortgage rates} rise (households)
+\item \textbf{Business loan rates} rise (firms)
+\item \textbf{Prime rate} rises (banks' benchmark lending rate)
+\end{itemize}
+
+\vspace{1em}
+Banks' higher opportunity cost $\rightarrow$ higher rates for all borrowers.
+\end{frame}
+
+% Slide: Step 3 - Private borrowers face higher opportunity cost
+\begin{frame}{Step 3: Private borrowers' opportunity cost goes up}
+\textbf{How does this affect the opportunity cost of private borrowers?}
+
+\vspace{1em}
+\textbf{Answer}: It goes \textcolor{red}{\textbf{up}}.
+
+\vspace{1em}
+\textbf{For households}:
+\begin{itemize}
+\item Can earn 5\% by holding government bonds (now yielding more)
+\item Mortgage rates are higher
+\item Less incentive to borrow, more incentive to save
+\end{itemize}
+
+\vspace{1em}
+\textbf{For firms}:
+\begin{itemize}
+\item \textbf{Risk-free rate} ($r_f$): Government bond yields rise (baseline opportunity cost)
+\item \textbf{Cost of debt} ($r_D$): Corporate bond yields and bank loans cost more
+\item \textbf{Cost of equity} ($r_E$): Also rises (through CAPM, since $r_f \uparrow$)
+\end{itemize}
+
+\vspace{1em}
+Everyone's opportunity cost is up $\rightarrow$ firms face higher cost of capital.
+\end{frame}
+
+% Slide: Step 4 - Higher cost of capital for firms
+\begin{frame}{Step 4: Firms face higher cost of capital}
+\textbf{Putting it together}:
+
+\vspace{1em}
+Central bank raises policy rate from 4\% to 5\%:
+
+\vspace{0.5em}
+\begin{enumerate}
+\item Banks' opportunity cost $\uparrow$ (interbank rate = 5\%)
+\item Banks charge private borrowers more
+\item $r_f \uparrow$ (government bonds yield more)
+\item $r_D \uparrow$ (corporate debt costs more)
+\item $r_E \uparrow$ (through CAPM: $r_E = r_f + \beta_E \times (\mathbb{E}[R_m] - r_f)$)
+\item \textcolor{red}{\textbf{WACC $\uparrow$}} (weighted average of $r_E$ and $r_D$ both rise)
+\end{enumerate}
+
+\vspace{1em}
+\textbf{The chain}:
+\[
+\text{Policy rate} \uparrow \rightarrow r_f \uparrow, r_D \uparrow \rightarrow \text{WACC} \uparrow
+\]
+
+\vspace{1em}
+Higher WACC means firms face a higher hurdle rate for investment projects.
+\end{frame}
+
+% Slide: Impact on investment and NPV
+\begin{frame}{How policy rates affect investment decisions}
+\textbf{Recall}: A project is worth pursuing if NPV $> 0$.
+
+\vspace{1em}
+NPV depends on the discount rate (WACC):
+\[
+\text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{\text{WACC}^t} - \text{Initial Investment}
+\]
+
+\vspace{1em}
+\textbf{When the central bank raises rates}:
+\begin{itemize}
+\item WACC $\uparrow$ $\rightarrow$ discount rate increases
+\item NPV of projects $\downarrow$ (future cash flows worth less today)
+\item \textcolor{red}{\textbf{Fewer projects have positive NPV}}
+\item Investment space shrinks $\rightarrow$ firms invest less
+\item Lower investment, fewer projects $\rightarrow$ economic growth \textbf{slows} (inflation reduces)
+\end{itemize}
+\end{frame}
+
+% Slide: Impact on WACC and firm value
+\begin{frame}{How policy rates affect firm valuations}
+\textbf{Recall}: $\text{WACC} = r_0 \times \left[1 - \frac{D}{E+D} \times \tau_c\right]$
+
+\vspace{1em}
+And $r_0$ depends on $r_f$ (through CAPM): $r_0 = r_f + \beta_A \times (\mathbb{E}[R_m] - r_f)$
+
+\vspace{1em}
+\textbf{When the central bank raises the policy rate}:
+\begin{enumerate}
+\item Policy rate $\uparrow$ $\rightarrow$ $r_f \uparrow$ and $r_D \uparrow$
+\item $r_f \uparrow$ $\rightarrow$ $r_0 \uparrow$ (unlevered cost of capital rises)
+\item WACC $\uparrow$ (discount rate increases)
+\item Firm value $= \sum_t CF_t / \text{WACC}^t$ $\downarrow$ (present value of cash flows falls)
+\end{enumerate}
+
+\vspace{1em}
+\textbf{When the central bank cuts the policy rate}:
+\begin{itemize}
+\item Everything reverses: WACC $\downarrow$, firm value $\uparrow$
+\end{itemize}
+
+\vspace{1em}
+This is why stock markets react immediately to central bank announcements.
+\end{frame}
+
+% Slide: Real economy effects
+\begin{frame}{Real economy effects: Investment, hiring, growth}
+\textbf{The full transmission to the real economy}:
+
+\vspace{1em}
+\textbf{Central bank raises rates}:
+\begin{enumerate}
+\item Policy rate $\uparrow$ $\rightarrow$ $r_f$, $r_D$, WACC all rise
+\item Fewer projects have positive NPV $\rightarrow$ \textcolor{red}{\textbf{less investment}}
+\item Less capital spending (factories, equipment, R\&D)
+\item Firms hire fewer workers $\rightarrow$ \textcolor{red}{\textbf{unemployment rises}}
+\item Economic growth slows $\rightarrow$ inflation cools
+\end{enumerate}
+
+\vspace{1em}
+\textbf{Central bank cuts rates}:
+\begin{enumerate}
+\item Policy rate $\downarrow$ $\rightarrow$ $r_f$, $r_D$, WACC all fall
+\item More projects have positive NPV $\rightarrow$ \textcolor{uoftteal}{\textbf{more investment}}
+\item More capital spending
+\item Firms hire more workers $\rightarrow$ \textcolor{uoftteal}{\textbf{unemployment falls}}
+\item Economic growth accelerates $\rightarrow$ may fuel inflation
+\end{enumerate}
+
+\vspace{1em}
+This is the \textcolor{uoftblue}{\textbf{real channel}} of monetary policy: interest rates $\rightarrow$ investment $\rightarrow$ employment $\rightarrow$ growth.
+\end{frame}
+
+%===============================================================================
+% PART 4: HEDGING AND RISK MANAGEMENT
+%===============================================================================
+
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Part 4}}\\
+\vspace{0.5em}
+{\Large Introduction to Hedging}
+\end{center}
+\end{frame}
+
+% Slide: Hedging vs speculation
+\begin{frame}{Hedging vs.\ speculation}
+\textbf{Two ways to use financial instruments}:
+
+\vspace{1em}
+\textbf{1. Hedging}:
+\begin{itemize}
+\item Using financial instruments to \textcolor{uoftteal}{\textbf{reduce a specific risk exposure}}
+\item Goal: Protect against adverse price movements
+\item Example: An airline worried about rising oil prices
+\end{itemize}
+
+\vspace{1em}
+\textbf{2. Speculation}:
+\begin{itemize}
+\item Using financial instruments to \textcolor{red}{\textbf{increase a specific risk exposure}}
+\item Goal: Profit from anticipated price movements
+\item Example: A trader betting oil prices will rise
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key difference}: Hedgers want to \emph{eliminate} a risk, speculators want to \emph{take on} a risk.
+
+\vspace{1em}
+Today we focus on \textbf{hedging}---how firms manage their risk exposures.
+\end{frame}
+
+% Slide: Motivating example - airline
+\begin{frame}{Motivating example: An airline's oil price exposure}
+\textbf{Consider an airline}:
+
+\vspace{1em}
+\textbf{The problem}:
+\begin{itemize}
+\item Fuel is a major operating cost (20-30\% of expenses)
+\item Oil prices are volatile
+\item \textcolor{red}{\textbf{Rising oil prices hurt profitability}}
+\begin{itemize}
+    \item Higher fuel costs $\rightarrow$ lower profit margins
+    \item Can't always pass costs to customers immediately
+\end{itemize}
+\end{itemize}
+
+\vspace{1em}
+\textbf{The exposure}:
+\begin{itemize}
+\item When oil prices $\uparrow$, airline's costs $\uparrow$, profits $\downarrow$
+\item When oil prices $\downarrow$, airline's costs $\downarrow$, profits $\uparrow$
+\end{itemize}
+
+\vspace{1em}
+\textbf{Question}: How can the airline reduce this exposure to oil price shocks?
+\end{frame}
+
+% Slide: Naive solution - buy oil stocks
+\begin{frame}{Naive solution: Buy oil company stocks?}
+\textbf{Idea}: Buy shares of oil companies (e.g., Exxon, Shell).
+
+\vspace{1em}
+\textbf{Logic}:
+\begin{itemize}
+\item When oil prices $\uparrow$, oil company stocks $\uparrow$
+\item Gains on oil stocks offset losses from higher fuel costs
+\end{itemize}
+
+\vspace{1em}
+\textbf{Why this doesn't work well}:
+\begin{enumerate}
+\item \textbf{Beta exposure}: Oil stocks have systematic risk
+\begin{itemize}
+    \item Stock prices move with the market, not just oil prices
+    \item In a recession, oil stocks can fall even if oil prices rise
+\end{itemize}
+
+\vspace{0.5em}
+\item \textbf{Downside risk}: You can lose money on the stocks
+\begin{itemize}
+    \item If oil prices fall, you lose on both the stocks \emph{and} your core business doesn't benefit as much as stocks lose
+\end{itemize}
+
+\vspace{0.5em}
+\item \textbf{Imperfect correlation}: Oil stock returns $\neq$ oil price changes
+\end{enumerate}
+
+\vspace{1em}
+\textbf{What we want}: An instrument that pays off \emph{only} when oil prices rise, and nothing otherwise.
+\end{frame}
+
+% Slide: Introduce options
+\begin{frame}{A better solution: Oil call options}
+\textbf{What if we could design an instrument that}:
+\begin{itemize}
+\item Pays us when oil prices rise (offsetting higher fuel costs)
+\item Has limited downside when oil prices fall
+\end{itemize}
+
+\vspace{1em}
+This is a \textcolor{uoftteal}{\textbf{call option}} on oil.
+
+\vspace{1em}
+\textbf{Formal definition of a call option}:
+\begin{itemize}
+\item Gives the holder the \textbf{right} (not obligation) to \textbf{buy} an asset at a specified price $K$ (called the \textbf{strike price})
+\item \textbf{Expiration date} ($T$): When the option expires
+\item \textbf{Premium} ($C$): The upfront price paid to purchase the option
+\end{itemize}
+
+\vspace{1em}
+\textbf{Exercise decision at expiration}:
+\begin{itemize}
+\item If oil price $S_T > K$: Exercise the option (buy at $K$, savings $= S_T - K$) 
+\item If oil price $S_T < K$: Let the option expire (walk away, savings = 0)
+\end{itemize}
+\end{frame}
+
+% Slide: Payoff vs profit
+\begin{frame}{Payoff vs.\ profit}
+\textbf{Important distinction}: Payoff $\neq$ Profit.
+
+\vspace{1em}
+\textbf{Payoff at expiration}:
+\[
+\text{Payoff} = \max(S_T - K, 0)
+\]
+\begin{itemize}
+\item This is what you receive at expiration
+\item Ignores the upfront premium paid
+\end{itemize}
+
+\vspace{1em}
+\textbf{Profit at expiration}:
+\[
+\text{Profit} = \max(S_T - K, 0) - C
+\]
+\begin{itemize}
+\item This accounts for the premium $C$ paid upfront
+\item Can be negative (you lose the premium if option expires worthless)
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key feature}: Payoff is \textcolor{uoftteal}{\textbf{asymmetric}}---you benefit from upside, but maximum loss is limited to the premium $C$.
+\end{frame}
+
+% Slide: Call option payoff diagram
+\begin{frame}{Call option payoff: The hockey stick}
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+% Axes
+\draw[->] (0,0) -- (8,0) node[right] {Oil price at expiration};
+\draw[->] (0,-1) -- (0,4) node[above] {Payoff};
+
+% Strike price line
+\draw[dashed] (4,-1) -- (4,4);
+\node[below] at (4,0) {$K$};
+
+% Payoff line
+\draw[very thick, uoftteal] (0,0) -- (4,0);
+\draw[very thick, uoftteal] (4,0) -- (7,3);
+
+% Labels
+\node[above right] at (6,2.5) {\textcolor{uoftteal}{Payoff $= \max(S - K, 0)$}};
+\node[below] at (2,-0.5) {Option expires worthless};
+\node[above] at (6,0.5) {Exercise option, profit};
+
+% Mark zero
+\draw (0,0.1) -- (0,-0.1) node[left] {0};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5em}
+\textbf{The ``hockey stick'' shape}:
+\begin{itemize}
+\item If $S < K$: Payoff $= 0$ (don't exercise)
+\item If $S > K$: Payoff $= S - K$ (exercise and profit)
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{For the airline}: This caps downside exposure to oil price increases.
+\end{frame}
+
+% Slide: Airline uses call options
+\begin{frame}{How the airline uses call options to hedge}
+\textbf{Hedging strategy}:
+
+\vspace{1em}
+\textbf{Airline's position}:
+\begin{enumerate}
+\item \textbf{Underlying exposure}: Rising oil prices hurt profits
+\item \textbf{Hedge}: Buy call options on oil for premium $C$ with strike $K$
+\end{enumerate}
+
+\vspace{1em}
+\textbf{Outcome}:
+\begin{itemize}
+\item \textbf{If oil price rises above $K$}:
+\begin{itemize}
+    \item Fuel costs increase, hurting profits
+    \item Call option pays off $(S - K)$, offsetting the loss
+    \item Net effect: Capped exposure to oil price increases
+\end{itemize}
+
+\vspace{0.5em}
+\item \textbf{If oil price stays below $K$}:
+\begin{itemize}
+    \item Fuel costs remain manageable
+    \item Call option expires worthless (sunk cost of premium)
+    \item Net effect: Small loss (premium paid), but no major impact
+\end{itemize}
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key insight}: The airline has \textcolor{uoftteal}{\textbf{insurance}} against rising oil prices.
+\end{frame}
+
+% Slide: Preview next week
+\begin{frame}{Next week: Options pricing}
+\textbf{Today}: Introduction to hedging and options (hockey sticks, protective puts, covered calls)
+
+\vspace{1em}
+\textbf{Next week}: How do we \emph{price} these options?
+
+\vspace{1em}
+\textbf{The fundamental challenge}:
+\begin{itemize}
+\item Pricing is about computing present value: $C = \text{PV}(\text{Expected Payoff})$
+\item But there's \textcolor{red}{\textbf{so much uncertainty}} in the payoff!
+\item Payoff depends on future stock price: $\max(S_T - K, 0)$
+\item Estimating the expected PV is extremely difficult
+\end{itemize}
+
+\vspace{1em}
+\textbf{The solution}: We need new tricks:
+\begin{itemize}
+\item \textcolor{uoftteal}{\textbf{No-arbitrage arguments}}: If two portfolios have the same payoff, they must have the same price
+\item \textcolor{uoftblue}{\textbf{Replicating (synthetic) portfolios}}: Build an option payoff using stocks and bonds
+\end{itemize}
+
+\vspace{1em}
+\textbf{Next week's topics}: Put-call parity, binomial trees, Black-Scholes formula.
+\end{frame}
+
+%===============================================================================
+% CONCLUSION
+%===============================================================================
+
+\begin{frame}{Conclusion: Connecting the Pieces}
+\begin{enumerate}
+\item \textbf{MM Theorem}: Capital structure doesn't matter in a frictionless world (the benchmark)
+\item \textbf{Taxes \& Bankruptcy}: Real-world frictions create optimal leverage
+\item \textbf{Central Banks}: Policy rates affect WACC, investment, and the real economy
+\item \textbf{Hedging}: Options let firms manage specific risk exposures
+\end{enumerate}
+
+\vspace{1em}
+\textbf{The big picture}:
+\begin{itemize}
+\item Firm-level decisions (capital structure, hedging) are deeply connected to macro conditions (tax policy, monetary policy)
+\item Systematic risk is the common thread: it affects optimal leverage, equity market volatility, and central bank effectiveness
+\item Corporate finance isn't just about individual firms---it's about how the entire economy allocates risk and capital
+\end{itemize}
+
+\vspace{1em}
+\textbf{Next week}: Options pricing (put-call parity, binomial trees, Black-Scholes).
+\end{frame}
+
+\begin{frame}
+\begin{center}
+{\Huge Thank you!}
+
+\vspace{2em}
+{\Large Questions?}
+\end{center}
+\end{frame}
+
+
+\end{document}

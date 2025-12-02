@@ -1,0 +1,361 @@
+% %!TEX TS-program = pdflatex
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{../eng_beamer}
+
+% Title page information
+\title[JRE 300 Finance Lecture 5 Practical]{Finance Lecture 5 Practical}
+\subtitle{JRE 300: Fundamentals of Accounting and Finance}
+\author{Kevin Mott}
+\institute{Rotman School of Management\\University of Toronto}
+\date{}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Quick Overview
+\begin{frame}{Quick Overview}
+\textbf{The big ideas from Lecture 5:}
+\begin{enumerate}
+\item MM Theorem: Capital structure doesn't matter (in a frictionless world)
+\item How leverage affects equity beta and cost of equity
+\item Taxes create a debt advantage (interest tax shield)
+\item Bankruptcy costs create a debt disadvantage
+\item Trade-off theory: Balancing tax benefits vs.\ distress costs
+\item Central banks affect WACC and investment through policy rates
+\end{enumerate}
+
+\vspace{1em}
+\textbf{Today}: Quick review + key formulas + practice problems
+\end{frame}
+
+% Part 1: MM and Capital Structure
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{MM Theorem}}\\[1em]
+{\Large Capital Structure Basics}
+\end{center}
+\end{frame}
+
+\begin{frame}{Firm value: $V = E + D$}
+\textbf{A firm's total value}:
+\[
+\boxed{V = E + D}
+\]
+
+where:
+\begin{itemize}
+\item $V$ = firm value
+\item $E$ = \textbf{market value} of equity
+\item $D$ = \textbf{market value} of debt
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key insight}: Firm value comes from assets (NPV $>$ 0 projects), not from how they're financed.
+
+\vspace{1em}
+\textbf{MM Theorem} (frictionless world):
+\begin{itemize}
+\item Capital structure doesn't affect firm value
+\item WACC stays constant regardless of $D/E$ ratio
+\item Changing leverage just reallocates risk among investors
+\end{itemize}
+\end{frame}
+
+\begin{frame}{How leverage affects equity beta}
+\textbf{Beta conservation equation}:
+\[
+\boxed{\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)}
+\]
+
+\vspace{1em}
+\textbf{With risk-free debt} ($\beta_D = 0$):
+\[
+\beta_E = \beta_{\text{Project}} \times \left(1 + \frac{D}{E}\right)
+\]
+
+\vspace{1em}
+\textbf{Example}: $\beta_{\text{Project}} = 1.2$, $D/E = 1$
+\[
+\beta_E = 1.2 \times (1 + 1) = 2.4
+\]
+
+\vspace{0.5em}
+\textbf{Intuition}: More debt $\rightarrow$ equity becomes riskier $\rightarrow$ $\beta_E$ increases
+\end{frame}
+
+\begin{frame}{Cost of equity rises with leverage}
+\textbf{Without taxes}:
+\[
+\boxed{r_E = r_0 + (r_0 - r_D) \times \frac{D}{E}}
+\]
+
+where $r_0$ = unlevered cost of equity
+
+\vspace{.5em}
+\textbf{Example}: $r_0 = 11.4\%$, $r_D = 3\%$, $D/E = 1$
+\[
+r_E = 11.4\% + (11.4\% - 3\%) \times 1 = 19.8\%
+\]
+
+\vspace{.5em}
+\textbf{With taxes} ($\tau_c = $ corporate tax rate):
+\[
+\boxed{r_E = r_0 + (r_0 - r_D) \times \frac{D}{E} \times (1 - \tau_c)}
+\]
+
+\vspace{0.5em}
+Tax shield reduces equity risk, so leverage premium is smaller.
+\end{frame}
+
+\begin{frame}{WACC without taxes}
+\textbf{Formula}:
+\[
+\text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D
+\]
+
+\vspace{1em}
+\textbf{MM Result}: In a frictionless world,
+\[
+\boxed{\text{WACC} = r_0}
+\]
+regardless of capital structure!
+
+\vspace{1em}
+\textbf{Why?} Rising $r_E$ exactly offsets the use of cheaper debt.
+
+\end{frame}
+
+% Part 2: Taxes
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Taxes}}\\[1em]
+{\Large The Interest Tax Shield}
+\end{center}
+\end{frame}
+
+\begin{frame}{Interest tax shield example}
+\textbf{Two identical firms}, EBIT = \$100, $\tau_c = 25\%$
+\begin{itemize}
+\item \textbf{Firm A}: No debt
+\item \textbf{Firm B}: \$500 debt at 5\% interest
+\end{itemize}
+
+\vspace{1em}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Firm A} & \textbf{Firm B} \\
+\midrule
+EBIT & \$100 & \$100 \\
+Interest & \$0 & \$25 \\
+Taxable income & \$100 & \$75 \\
+Taxes (25\%) & \$25 & \$18.75 \\
+\midrule
+\textbf{Cash to investors} & \textbf{\$75} & \textbf{\$81.25} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\textbf{Tax shield} $= $ Interest $\times \tau_c = \$25 \times 0.25 = \$6.25$
+
+\vspace{0.5em}
+Debt saves taxes! This is why capital structure matters in the real world.
+\end{frame}
+
+\begin{frame}{WACC with taxes}
+\textbf{Formula with tax shield}:
+\[
+\boxed{\text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D \times (1 - \tau_c)}
+\]
+
+\vspace{1em}
+\textbf{Key result}: More debt $\rightarrow$ lower WACC
+\[
+\text{WACC} = r_0 \times \left[1 - \frac{D}{E+D} \times \tau_c\right]
+\]
+
+\vspace{1em}
+\textbf{Why lower WACC matters}:
+\begin{itemize}
+\item Lower discount rate $\rightarrow$ higher firm value
+\item More projects have positive NPV (lower hurdle rate)
+\end{itemize}
+
+\end{frame}
+
+% Part 3: Bankruptcy
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Bankruptcy Costs}}\\[1em]
+{\Large Why Not 100\% Debt?}
+\end{center}
+\end{frame}
+
+\begin{frame}{Types of bankruptcy costs}
+\textbf{1. Direct costs}:
+\begin{itemize}
+\item Legal fees, court costs, administrative expenses
+\item Typically 3-7\% of firm value
+\end{itemize}
+
+\vspace{1em}
+\textbf{2. Indirect costs} (often much larger!):
+\begin{itemize}
+\item \textbf{Lost customers}: Worry about warranties, service
+\item \textbf{Lost suppliers}: Demand cash, refuse credit
+\item \textbf{Lost employees}: Talented workers leave
+\item \textbf{Underinvestment}: Can't raise capital for good projects
+\item \textbf{Asset fire sales}: Forced to sell below fair value
+\end{itemize}
+
+\vspace{1em}
+\textbf{Key point}: More debt $\rightarrow$ higher bankruptcy risk $\rightarrow$ higher expected bankruptcy costs
+\end{frame}
+
+\begin{frame}{Trade-off theory of capital structure}
+\textbf{The optimization}:
+\[
+\max_{D/E} \quad \text{PV(Tax Shield)} - \text{PV(Bankruptcy Costs)}
+\]
+
+\vspace{1em}
+\textbf{Trade-off}:
+\begin{itemize}
+\item \textcolor{uoftteal}{\textbf{More debt}}: Lower WACC, higher tax shield
+\item \textcolor{red}{\textbf{More debt}}: Higher bankruptcy risk, destroys value
+\end{itemize}
+
+\vspace{1em}
+\textbf{Optimal capital structure}: Balance tax benefits against distress costs
+
+\vspace{1em}
+\textbf{Depends on}:
+\begin{itemize}
+\item Firm's systematic risk ($\beta$)
+\item Cash flow stability
+\item Asset tangibility
+\item Tax rates
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Corporate taxes and equity market risk}
+\textbf{Recall}: $\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D) \times (1 - \tau_c)$
+
+\vspace{1em}
+\textbf{Macro implication}: Higher corporate tax rates stabilize equity markets!
+
+\vspace{1em}
+\textbf{When $\tau_c$ falls} (tax cuts):
+\begin{itemize}
+\item $(1 - \tau_c) \uparrow$ $\rightarrow$ equity beta rises for levered firms
+\item Stock market becomes more volatile
+\item Equity returns more sensitive to macro shocks
+\end{itemize}
+
+\vspace{1em}
+\textbf{Spillover effects}:
+\begin{itemize}
+\item \textbf{Wealth inequality}: More volatile equity markets amplify wealth swings
+\item \textbf{Retirement stability}: More systematic risk in pensions
+\item \textbf{Financing}: Higher volatility raises cost of capital
+\end{itemize}
+\end{frame}
+
+% Part 4: Central Banks
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Central Banks}}\\[1em]
+{\Large Monetary Policy and WACC}
+\end{center}
+\end{frame}
+
+\begin{frame}{The transmission mechanism}
+\textbf{How central banks affect the real economy}:
+
+\vspace{1em}
+\begin{enumerate}
+\item \textbf{Central bank} sets policy rate (overnight rate, fed funds rate)
+\item \textbf{Banks} pass on higher costs to borrowers
+\item \textbf{$r_f$ and $r_D$} both rise (government and corporate bonds)
+\item \textbf{$r_E$} rises (through CAPM: $r_E = r_f + \beta_E \times$ market premium)
+\item \textbf{WACC} rises (weighted average of $r_E$ and $r_D$)
+\item \textbf{NPV} of projects falls (higher discount rate)
+\item \textbf{Investment} decreases (fewer positive NPV projects)
+\item \textbf{Hiring} decreases, unemployment rises
+\item \textbf{Economic growth} slows, inflation cools
+\end{enumerate}
+
+\vspace{1em}
+\textbf{The chain}:
+\[
+\text{Policy rate} \uparrow \rightarrow \text{WACC} \uparrow \rightarrow \text{NPV} \downarrow \rightarrow \text{Investment} \downarrow
+\]
+\end{frame}
+
+\begin{frame}{Policy rates affect firm valuations}
+\textbf{Firm value}:
+\[
+V = \sum_{t=1}^{\infty} \frac{CF_t}{\text{WACC}^t}
+\]
+
+\vspace{.5em}
+\textbf{When central bank raises rates}:
+\begin{itemize}
+\item WACC $\uparrow$ (higher discount rate)
+\item Firm value $\downarrow$ (PV of cash flows falls)
+\item Stock prices fall immediately
+\end{itemize}
+
+\vspace{.5em}
+\textbf{When central bank cuts rates}:
+\begin{itemize}
+\item WACC $\downarrow$ (lower discount rate)
+\item Firm value $\uparrow$ (PV of cash flows rises)
+\item Stock prices rise immediately
+\end{itemize}
+
+\vspace{.5em}
+\textbf{This is why}: Markets react instantly to central bank announcements!
+\end{frame}
+
+% Key formulas
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Key Formulas}}
+\end{center}
+\end{frame}
+
+\begin{frame}{Capital structure formulas}
+\textbf{Firm value}:
+\[
+V = E + D
+\]
+
+\textbf{Equity beta with leverage}:
+\[
+\beta_E = \beta_{\text{Project}} + \frac{D}{E}(\beta_{\text{Project}} - \beta_D)
+\]
+
+\textbf{Cost of equity with leverage (with taxes)}:
+\[
+r_E = r_0 + (r_0 - r_D) \times \frac{D}{E} \times (1 - \tau_c)
+\]
+
+\textbf{WACC with taxes}:
+\[
+\text{WACC} = \frac{E}{E+D} \times r_E + \frac{D}{E+D} \times r_D \times (1 - \tau_c)
+\]
+\end{frame}
+
+\begin{frame}
+\begin{center}
+{\Huge \textcolor{uoftblue}{Practice Problems}}
+\end{center}
+\end{frame}
+
+\end{document}
